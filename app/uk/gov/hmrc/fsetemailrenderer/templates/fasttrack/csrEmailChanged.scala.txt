@@ -1,0 +1,12 @@
+@(params: uk.gov.hmrc.fsetemailrenderer.controllers.model.Params)
+@if(params.parameters("name").toString.trim.nonEmpty){Dear @{params.parameters("name")}}
+
+Your email address has been changed to @{params.parameters("newEmail")}
+If this is unexpected please contact us immediately using the details below.
+
+Thank you
+
+Fast Track apprenticeship team
+
+If you need more help, call us on 03000 54 22 11.
+Do not reply to this email

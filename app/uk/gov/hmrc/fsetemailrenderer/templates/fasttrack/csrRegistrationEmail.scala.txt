@@ -1,0 +1,18 @@
+@(params: uk.gov.hmrc.fsetemailrenderer.controllers.model.Params)
+@if(params.parameters("name").toString.trim.nonEmpty){Dear @{params.parameters("name")}}
+
+You've successfully created your account.
+
+To activate your account you'll need to enter this 7-character code:
+
+@{params.parameters("activationCode")}
+
+You must activate your account within 30 days of receiving your activation code.
+If you don't activate your account, after 30 days your account will be deleted, and you'll need to register again.
+
+Thank you
+
+Fast Track apprenticeship team
+
+If you need more help, call us on 03000 54 22 11.
+Do not reply to this email

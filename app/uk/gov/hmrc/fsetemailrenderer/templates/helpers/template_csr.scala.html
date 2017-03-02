@@ -1,0 +1,63 @@
+@(params: uk.gov.hmrc.fsetemailrenderer.controllers.model.Params, title: String = "Email")(content: Html)<html>
+
+    <!DOCTYPE html>
+    <html lang="en">
+        <head><meta charset="UTF-8" /><meta content="width=device-width, initial-scale=1.0" name="viewport" />
+            <title>@title</title>
+        </head>
+        <body style="font-family: Helvetica, Arial, sans-serif;font-size: 16px;margin: 0;color:#0b0c0c;">
+            <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                <tbody>
+                    <tr>
+                        <td bgcolor="#0b0c0c" width="100%">
+                            <table align="center" border="0" cellpadding="0" cellspacing="0" width="580">
+                                <tbody>
+                                    <tr>
+                                        @*<img src="@{params.parameters("staticAssetUrlPrefix")}@{params.parameters("staticAssetVersion")}/images/gov.uk_logotype_crown.png" alt="GOV.UK" border="0" style="width: 35px;height: 31px;border: none;">*@
+                                        <td border="0" cellpadding="0" cellspacing="0" height="46" style="font-family: Helvetica, Arial, sans-serif;font-size: 26px; font-weight: bold; color: white; text-decoration: none" valign="middle" width="44"><img alt="" border="0" class="header-logo" height="31"
+                                        src="@{params.parameters("staticAssetUrlPrefix")}@{params.parameters("staticAssetVersion")}/images/gov.uk_logotype_crown.png" alt="GOV.UK" style="border-top-width: 4px; border-top-style: solid; border-top-color: black; width: 35px; height: 31px;" width="35" /></span></td>
+                                        <td border="0" cellpadding="0" cellspacing="0" height="46" style="font-family: Helvetica, Arial, sans-serif;font-size: 26px; font-weight: bold; color: white; text-decoration: none" valign="middle"><a href="http://gov.uk" style="font-family: Helvetica, Arial, sans-serif;font-size: 26px; color: white; text-decoration: none">GOV.UK</a></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td height="5" width="100%">
+                            <table align="center" bgcolor="#005ea5" border="0" cellpadding="0" cellspacing="0" width="580">
+                                <tbody>
+                                    <tr>
+                                        <td border="0" cellpadding="0" cellspacing="0" style="font-size: 10px;" valign="middle" width="100%">&nbsp;</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td height="10" width="100%">&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td border="0" cellpadding="0" cellspacing="0" width="100%">
+                            <table align="center" border="0" cellpadding="0" cellspacing="0" width="580">
+                                <tbody>
+                                    <tr>
+                                        <td border="0" cellpadding="0" cellspacing="0" style="font-family: Helvetica, Arial, sans-serif;color:#0b0c0c;" valign="bottom" width="100%">
+                                            <div class="main-content">
+                                                @content
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td height="10" width="100%">&nbsp;</td>
+                    </tr>
+                </tbody>
+            </table>
+        </body>
+    </html>
+
+
+

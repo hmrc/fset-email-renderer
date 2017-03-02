@@ -1,0 +1,13 @@
+@(params: uk.gov.hmrc.fsetemailrenderer.controllers.model.Params)
+@if(params.parameters("name").toString.trim.nonEmpty){Dear @{params.parameters("name")}}
+
+You have three days to finish your online exercises.
+
+Your online exercises will expire on @{params.parameters("expireDateTime")}
+You must finish the exercises before they expire
+Sign in to your home page to finish the exercises. (https://www.apply-civil-service-apprenticeship.service.gov.uk/fset-fast-track/signin)
+
+Thank you
+Fast Track apprenticeship team
+
+If you need more help, call us on 03000 54 22 11.

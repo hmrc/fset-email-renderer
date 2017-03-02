@@ -1,0 +1,17 @@
+@(params: uk.gov.hmrc.fsetemailrenderer.controllers.model.Params)
+@if(params.parameters("name").toString.trim.nonEmpty){Dear @{params.parameters("name")}}
+
+We've updated your adjustments.
+
+Your updated adjustments are:
+
+@{params.parameters("onlineTestsAdjustments")}
+@{params.parameters("assessmentCenterAdjustments")}
+
+If you believe there has been a mistake, please contact us.
+
+Thank you
+
+Fast Track team
+
+If you need more help, call us on 03000 54 22 11.

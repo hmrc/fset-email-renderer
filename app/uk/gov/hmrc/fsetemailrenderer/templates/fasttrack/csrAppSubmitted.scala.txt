@@ -1,0 +1,12 @@
+@(params: uk.gov.hmrc.fsetemailrenderer.controllers.model.Params)
+@if(params.parameters("name").toString.trim.nonEmpty){Dear @{params.parameters("name")}}
+
+You've successfully submitted your apprenticeship application.
+The next step is to complete the online tests. You'll be sent an email once these are ready for you to start. You’ll then have 7 days to complete the tests from when the email is sent, so it's important you check your email each day.
+
+Thank you
+
+Fast Track apprenticeship team
+
+If you need more help, call us on 03000 54 22 11.
+Do not reply to this email

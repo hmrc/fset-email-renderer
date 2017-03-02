@@ -1,0 +1,19 @@
+@(templates: Seq[uk.gov.hmrc.fsetemailrenderer.domain.Template])
+
+<html>
+	<head>
+		<title>Preview Email Templates</title>
+	</head>
+	<body>
+		<h2>Preview Email Templates</h2>
+
+		@templates.map{ template =>
+			<p>@template.templateId
+				<a href='@uk.gov.hmrc.fsetemailrenderer.preview.routes.PreviewController.previewHtml(template.templateId)'>(Html)</a>
+				<a href='@uk.gov.hmrc.fsetemailrenderer.preview.routes.PreviewController.previewText(template.templateId)'>(Text)</a>
+				<a href='@uk.gov.hmrc.fsetemailrenderer.preview.routes.PreviewController.previewHtmlSource(template.templateId)'>(Html Source)</a>
+			</p>
+		}
+
+	</body>
+</html>

@@ -1,0 +1,14 @@
+@(params: uk.gov.hmrc.fsetemailrenderer.controllers.model.Params)
+@uk.gov.hmrc.fsetemailrenderer.templates.helpers.html.template_csr(params, "Online tests are now open") {
+    <p style="font-size: 19px; line-height: 1.315789474; margin: 0 0 30px 0;">Dear @{params.parameters("name")}</p>
+    <br>
+    <p style="font-size: 19px; line-height: 1.315789474; margin: 0 0 30px 0;">We're pleased to let you know that the online tests are now available for you to complete.</p>
+    <br>
+    <h2 id="activationCodeID" style="font-size: 32px; line-height: 1.315789474; margin: 0 0 30px 0;">You have 7 days to complete the tests.</h2>
+    <p style="font-size: 19px; line-height: 1.315789474; margin: 0 0 30px 0;">The tests will expire on @{params.parameters("expireDateTime")}. You'll no longer be able to take the tests after this date.</p>
+    <p style="font-size: 19px; line-height: 1.315789474; margin: 0 0 30px 0;">You'll need to sign in to start the tests (<a href="https://www.apply-civil-service-apprenticeship.service.gov.uk/fset-fast-track/signin">https://www.apply-civil-service-apprenticeship.service.gov.uk/fset-fast-track/signin</a>).</p>
+    <p style="font-size: 19px; line-height: 1.315789474; margin: 0 0 30px 0;">Thank you</p>
+    <p style="font-size: 19px; line-height: 1.315789474; margin: 0 0 30px 0;">Fast Track apprenticeship team</p>
+    <p style="font-size: 19px; line-height: 1.315789474; margin: 0 0 30px 0;">If you need more help, call us on 03000 54 22 11.</p>
+    <p style="font-size: 19px; line-height: 1.315789474; margin: 0 0 30px 0;">Do not reply to this email</p>
+}
