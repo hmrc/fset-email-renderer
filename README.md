@@ -1,4 +1,3 @@
-
 # fset-email-renderer
 
 [![Build Status](https://travis-ci.org/hmrc/fset-email-renderer.svg?branch=master)](https://travis-ci.org/hmrc/fset-email-renderer) [ ![Download](https://api.bintray.com/packages/hmrc/releases/fset-email-renderer/images/download.svg) ](https://bintray.com/hmrc/releases/fset-email-renderer/_latestVersion)
