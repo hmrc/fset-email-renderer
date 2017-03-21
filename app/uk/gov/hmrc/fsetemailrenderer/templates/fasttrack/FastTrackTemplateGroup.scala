@@ -19,7 +19,6 @@ package uk.gov.hmrc.fsetemailrenderer.templates.fasttrack
 import uk.gov.hmrc.fsetemailrenderer.domain._
 import uk.gov.hmrc.fsetemailrenderer.MicroserviceAppConfig
 
-
 case class FastTrackTemplate(
   templateId: String,
   subject: Subject,
@@ -113,9 +112,14 @@ object FastTrackTemplateGroup {
       body = Body(html.csrLockoutEmail.f, txt.csrLockoutEmail.f)
     ),
     FastTrackTemplate(
-      templateId = "fset_fasttrack_account_email_changed",
+      templateId = "fset_fasttrack_account_email_changed_sent_to_old_address",
       subject = Subject("Your email address has been changed"),
-      body = Body(html.csrEmailChanged.f, txt.csrEmailChanged.f)
+      body = Body(html.csrEmailChangedSentToOldAddress.f, txt.csrEmailChangedSentToOldAddress.f)
+    ),
+    FastTrackTemplate(
+      templateId = "fset_fasttrack_assessor_email_changed_sent_to_new_address",
+      subject = Subject("Your email address has been changed"),
+      body = Body(html.csrEmailChangedSentToNewAddress.f, txt.csrEmailChangedSentToNewAddress.f)
     ),
     FastTrackTemplate(
       templateId = "fset_fasttrack_app_submit_confirmation",
