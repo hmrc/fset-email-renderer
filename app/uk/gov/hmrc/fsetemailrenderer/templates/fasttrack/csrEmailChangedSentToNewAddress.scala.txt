@@ -5,7 +5,11 @@ Your email address for your account has been changed to @{params.parameters("new
 Sign in using this email address and current password
 Your password has not been changed.
 
-Visit the sign in page to continue (***REMOVED***)
+@if(params.parameters.getOrElse("role", "").toString == "assessor"){
+Visit the sign in page to continue (@params.parameters("assessorSigninUrl"))
+} else {
+Visit the sign in page to continue (@params.parameters("adminSigninUrl"))
+}
 
 Thank you
 
