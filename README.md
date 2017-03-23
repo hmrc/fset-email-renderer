@@ -5,6 +5,7 @@
 # Fast Stream & Early Talent Email Templates
 
 This repository holds the HTML and plain text email templates for the Fast Stream and Fast Track programmes.
+Note that any sensitive URLs or values should not be checked into these templates.  Please inject these parameters via app config to the paramter map used by the templates.
 
 **Note: Before sending a pull request with template changes, please look at our [guidelines](/CONTRIBUTING.md).**
 
@@ -40,12 +41,12 @@ Responds with status:
     "plain": "Rendered template in text format",
     "html": "Rendered template in HTML format",
     "fromAddress": "From address to be used for this email when sending",
-    "subject": "Email subject to use", 
+    "subject": "Email subject to use",
     "service": "The regime (i.e. - sa/paye/etc) that this template belongs to"
 }
  ```
 * 404 When the template with the provided template Id cannot be resolved.
- 
+
 * 400 When an insufficient set of parameters for rendering the template is specified in the request. Only the first missing value is reported.
 
  ```json
@@ -87,4 +88,4 @@ Again, list the templates can then be previewed from
 ### License
 
 This code is open source software licensed under the [Apache 2.0 License]("http://www.apache.org/licenses/LICENSE-2.0.html").
-    
+
