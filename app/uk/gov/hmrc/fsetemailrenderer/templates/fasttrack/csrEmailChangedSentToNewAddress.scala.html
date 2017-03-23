@@ -1,0 +1,16 @@
+@(params: uk.gov.hmrc.fsetemailrenderer.controllers.model.Params)
+@uk.gov.hmrc.fsetemailrenderer.templates.helpers.html.template_csr(params, "Your email address has been changed") {
+    @if(params.parameters("name").toString.trim.nonEmpty){
+        <p style="font-size: 19px; line-height: 1.315789474; margin: 0 0 30px 0;">Dear @{params.parameters("name")}</p>
+        <br/>
+    }
+    <p style="font-size: 19px; line-height: 1.315789474; margin: 0 0 30px 0;">The email address for your account has been changed to <b>@{params.parameters("newEmail")}</b></p>
+    <h2 style="font-size: 32px; line-height: 1.315789474; margin: 0 0 30px 0;">Sign in using this email address and current password</h2>
+    <p style="font-size: 19px; line-height: 1.315789474; margin: 0 0 30px 0;">Your password has not been changed.</p>
+    <p style="font-size: 19px; line-height: 1.315789474; margin: 0 0 30px 0;">Visit the sign in page to continue
+        <br> (<a href="/admin/signin.html">***REMOVED***</a>)</p>
+
+	<p style="font-size: 19px; line-height: 1.315789474; margin: 0 0 30px 0;">Thank you</p>
+    <p style="font-size: 19px; line-height: 1.315789474; margin: 0 0 30px 0;">Fast Track team</p>
+    <p style="font-size: 19px; line-height: 1.315789474; margin: 0 0 30px 0;">If you need more help, call us on 03000 54 22 11.</p>
+}
