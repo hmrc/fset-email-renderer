@@ -1,0 +1,11 @@
+@(params: uk.gov.hmrc.fsetemailrenderer.controllers.model.Params)@if(params.parameters("name").toString.trim.nonEmpty){Dear @{params.parameters("name")}}
+
+We've confirmed your Fast Pass is valid.
+
+Once your application has been processed we'll send you an email inviting you to an assessment centre.
+
+Thank you
+
+Fast Stream team
+
+If you need more help, call us on 01276 400 333.

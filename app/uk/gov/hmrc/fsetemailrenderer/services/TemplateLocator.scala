@@ -18,12 +18,14 @@ package uk.gov.hmrc.fsetemailrenderer.services
 
 import uk.gov.hmrc.fsetemailrenderer.domain.Template
 import uk.gov.hmrc.fsetemailrenderer.templates.fasttrack.FastTrackTemplateGroup
+import uk.gov.hmrc.fsetemailrenderer.templates.faststream.FastStreamTemplateGroup
 
 trait TemplateLocator {
   def templates: Seq[Template]
 
   def findTemplate(templateId: String) : Option[Template] = templates.find(_.templateId == templateId)
 }
+
 object TemplateLocator extends TemplateLocator {
-  override val templates = FastTrackTemplateGroup.Templates
+  override val templates: Seq[Template with Product with Serializable] = FastTrackTemplateGroup.Templates ++ FastStreamTemplateGroup.Templates
 }
