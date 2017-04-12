@@ -1,0 +1,12 @@
+@(params: uk.gov.hmrc.fsetemailrenderer.controllers.model.Params)@uk.gov.hmrc.fsetemailrenderer.templates.helpers.html.template_csr(params, "Your application has been withdrawn") {
+    @if(params.parameters("name").toString.trim.nonEmpty){
+        <p style="font-size: 19px; line-height: 1.315789474; margin: 0 0 30px 0;">Dear @{params.parameters("name")}</p>
+        <br/>
+    }
+    <p style="font-size: 19px; line-height: 1.315789474; margin: 0 0 30px 0;">Your application has been withdrawn by a member of our service team.</p>
+    <p style="font-size: 19px; line-height: 1.315789474; margin: 0 0 30px 0;">If you believe there has been a mistake, please contact us.</p>
+
+    <p style="font-size: 19px; line-height: 1.315789474; margin: 0 0 30px 0;">Thank you</p>
+    <p style="font-size: 19px; line-height: 1.315789474; margin: 0 0 30px 0;">Fast Stream team</p>
+    <p style="font-size: 19px; line-height: 1.315789474; margin: 0 0 30px 0;">If you need more help, call us on 01276 400 333.</p>
+}

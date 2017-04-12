@@ -1,0 +1,22 @@
+@(params: uk.gov.hmrc.fsetemailrenderer.controllers.model.Params)@uk.gov.hmrc.fsetemailrenderer.templates.helpers.html.template_csr(params, "You can start your online exercises now") {
+  @if(params.parameters("name").toString.trim.nonEmpty){
+    <p style="font-size: 19px; line-height: 1.315789474; margin: 0 0 30px 0;">Dear @{params.parameters("name")}</p>
+    <br/>
+  }
+    <p style="font-size: 19px; line-height: 1.315789474; margin: 0 0 30px 0;">Congratulations, you've passed the online exercises.</p>
+    <p style="font-size: 19px; line-height: 1.315789474; margin: 0 0 30px 0;">The e-tray is now ready for you to complete.</p>
+    <h3 style="font-size: 19px; line-height: 1.315789474; margin: 0 0 30px 0;">
+      You must finish your e-tray before @{params.parameters("expireDateTime")}.
+    </h3>
+    <h3 style="font-size: 19px; line-height: 1.315789474; margin: 0 0 30px 0;">
+      The e-tray is timed and you'll have 80 minutes to complete it. <br>
+      If we've agreed you require extra time, this will be added to the 80 minutes.
+    </h3>
+    <p style="font-size: 19px; line-height: 1.315789474; margin: 0 0 30px 0;">Sign in to your home page to start the e-tray.
+      <br> (<a href="https://www.apply-civil-service-fast-stream.service.gov.uk/fset-fast-stream/signin">https://www.apply-civil-service-fast-stream.service.gov.uk/fset-fast-stream/signin</a>)</p>
+    <p style="font-size: 19px; line-height: 1.315789474; margin: 0 0 30px 0;">Thank you</p>
+    <p style="font-size: 19px; line-height: 1.315789474; margin: 0 0 30px 0;">Fast Stream team</p>
+    <br>
+    <p style="font-size: 19px; line-height: 1.315789474; margin: 0 0 30px 0;">If you need more help, call us on 01276 400 333.</p>
+}
+
