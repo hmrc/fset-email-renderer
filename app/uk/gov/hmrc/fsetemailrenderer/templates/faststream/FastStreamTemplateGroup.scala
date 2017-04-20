@@ -16,6 +16,8 @@
 
 package uk.gov.hmrc.fsetemailrenderer.templates.faststream
 
+import java.util.Base64
+
 import uk.gov.hmrc.fsetemailrenderer.domain._
 import uk.gov.hmrc.fsetemailrenderer.MicroserviceAppConfig
 
@@ -24,9 +26,9 @@ case class FastStreamTemplate(
   subject: Subject,
   body: Body
 ) extends Template {
-  def fromAddress: String = MicroserviceAppConfig.fastStreamInjectedParameters("fromAddress")
-  def priority = MessagePriority.Standard
-  def fromService = "faststream.gov.uk"
+  val fromAddress: String = new String(Base64.getDecoder.decode(MicroserviceAppConfig.fastStreamInjectedParameters("fromAddress")))
+  val priority = MessagePriority.Standard
+  val fromService = "faststream.gov.uk"
 }
 
 object FastStreamTemplateGroup {

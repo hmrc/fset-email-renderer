@@ -16,6 +16,8 @@
 
 package uk.gov.hmrc.fsetemailrenderer.templates.fasttrack
 
+import java.util.Base64
+
 import uk.gov.hmrc.fsetemailrenderer.domain._
 import uk.gov.hmrc.fsetemailrenderer.MicroserviceAppConfig
 
@@ -24,9 +26,9 @@ case class FastTrackTemplate(
   subject: Subject,
   body: Body
 ) extends Template {
-  def fromAddress: String = MicroserviceAppConfig.fastTrackInjectedParameters("fromAddress")
-  def priority = MessagePriority.Standard
-  def fromService = "fasttrack.gov.uk"
+  val fromAddress: String = new String(Base64.getDecoder.decode(MicroserviceAppConfig.fastTrackInjectedParameters("fromAddress")))
+  val priority = MessagePriority.Standard
+  val fromService = "fasttrack.gov.uk"
 }
 
 object FastTrackTemplateGroup {
