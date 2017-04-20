@@ -14,7 +14,7 @@ class RendererISpec extends PlaySpec with OneServerPerSuite with WsScalaTestClie
         post(Json.obj("parameters" -> Json.obj("name" -> "Dr. Bruce Banner", "activationCode" -> "AABBCC", "programme" -> "fasttrack"))))
 
       result.status mustBe Status.OK
-      (result.json \ "fromAddress").as[String] mustBe "noreply@csr.vtdev.uk"
+      (result.json \ "fromAddress").as[String] mustBe "Fast Track team <noreply@csr.vtdev.uk>"
       (result.json \ "subject").as[String] mustBe "Your activation code"
       (result.json \ "service").as[String] mustBe "fasttrack.gov.uk"
       (result.json \ "plain").as[String] mustNot be(new EmptyWord())
