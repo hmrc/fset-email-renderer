@@ -70,7 +70,7 @@ object FastStreamTemplateGroup {
     ),
     FastStreamTemplate(
       templateId = "fset_faststream_app_phase3_test_invitation",
-      subject = Subject("You can start the vtemplateIdeo interview now"),
+      subject = Subject("You can start the video interview now"),
       body = Body(html.fsetFaststreamAppPhase3TestInvitation.f, txt.fsetFaststreamAppPhase3TestInvitation.f)
     ),
     FastStreamTemplate(
@@ -85,7 +85,7 @@ object FastStreamTemplateGroup {
     ),
     FastStreamTemplate(
       templateId = "fset_faststream_app_online_phase3_test_expired",
-      subject = Subject("Your vtemplateIdeo interview has expired"),
+      subject = Subject("Your video interview has expired"),
       body = Body(html.fsetFaststreamAppOnlinePhase3TestExpired.f, txt.fsetFaststreamAppOnlinePhase3TestExpired.f)
     ),
     FastStreamTemplate(
@@ -100,7 +100,7 @@ object FastStreamTemplateGroup {
     ),
     FastStreamTemplate(
       templateId = "fset_faststream_app_online_phase3_test_reminder",
-      subject = Subject("You need to finish the vtemplateIdeo interview"),
+      subject = Subject("You need to finish the video interview"),
       body = Body(html.fsetFaststreamAppOnlinePhase3TestReminder.f, txt.fsetFaststreamAppOnlinePhase3TestReminder.f)
     ),
     FastStreamTemplate(
@@ -135,7 +135,7 @@ object FastStreamTemplateGroup {
     ),
     FastStreamTemplate(
       templateId = "fset_faststream_app_online_phase3_test_success",
-      subject = Subject("You've passed the vtemplateIdeo interview"),
+      subject = Subject("You've passed the video interview"),
       body = Body(html.fsetFaststreamAppOnlinePhase3TestSuccess.f, txt.fsetFaststreamAppOnlinePhase3TestSuccess.f)
     ),
     FastStreamTemplate(
