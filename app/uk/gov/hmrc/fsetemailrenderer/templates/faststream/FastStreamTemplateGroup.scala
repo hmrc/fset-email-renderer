@@ -54,6 +54,16 @@ object FastStreamTemplateGroup {
       body = Body(html.fsetFaststreamLockoutEmail.f, txt.fsetFaststreamLockoutEmail.f)
     ),
     FastStreamTemplate(
+      templateId = "fset_faststream_account_email_changed_sent_to_old_address",
+      subject = Subject("Your email address has been changed"),
+      body = Body(html.fsetFaststreamEmailChangedSentToOldAddress.f, txt.fsetFaststreamEmailChangedSentToOldAddress.f)
+    ),
+    FastStreamTemplate(
+      templateId = "fset_faststream_assessor_email_changed_sent_to_new_address",
+      subject = Subject("Your email address has been changed"),
+      body = Body(html.fsetFaststreamEmailChangedSentToNewAddress.f, txt.fsetFaststreamEmailChangedSentToNewAddress.f)
+    ),
+    FastStreamTemplate(
       templateId = "fset_faststream_app_submit_confirmation",
       subject = Subject("You've successfully submitted your application"),
       body = Body(html.fsetFaststreamAppSubmittedEmail.f, txt.fsetFaststreamAppSubmittedEmail.f)
