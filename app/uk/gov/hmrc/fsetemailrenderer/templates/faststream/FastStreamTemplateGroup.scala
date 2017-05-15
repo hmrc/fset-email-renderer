@@ -44,6 +44,11 @@ object FastStreamTemplateGroup {
       body = Body(html.fsetFaststreamRegistrationActivatedNoPasswordEmail.f, txt.fsetFaststreamRegistrationActivatedNoPasswordEmail.f)
     ),
     FastStreamTemplate(
+      templateId = "fset_faststream_external_registration_activated_no_password_email",
+      subject = Subject("New account has been created"),
+      body = Body(html.fsetFaststreamExternalRegistrationActivatedNoPasswordEmail.f, txt.fsetFaststreamExternalRegistrationActivatedNoPasswordEmail.f)
+    ),
+    FastStreamTemplate(
       templateId = "fset_faststream_reset_password_email",
       subject = Subject("Your reset password code"),
       body = Body(html.fsetFaststreamResetPasswordEmail.f, txt.fsetFaststreamResetPasswordEmail.f)
