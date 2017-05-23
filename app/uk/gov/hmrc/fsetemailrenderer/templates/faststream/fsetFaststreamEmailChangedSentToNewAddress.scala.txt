@@ -6,7 +6,7 @@ Sign in using this email address and current password
 Your password has not been changed.
 
 @if(params.parameters.getOrElse("role", "").toString == "assessor"){
-Visit the sign in page to continue (@params.parameters("assessorSigninUrl"))
+Visit the sign in page to continue (@params.parameters("externalSigninUrl"))
 } else {
 Visit the sign in page to continue (@params.parameters("adminSigninUrl"))
 }

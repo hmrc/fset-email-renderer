@@ -9,7 +9,7 @@
     <p style="font-size: 19px; line-height: 1.315789474; margin: 0 0 30px 0;">Your password has not been changed.</p>
     <p style="font-size: 19px; line-height: 1.315789474; margin: 0 0 30px 0;">Visit the sign in page to continue
     @if(params.parameters.getOrElse("role", "").toString == "assessor"){
-        <br> (<a href='@params.parameters("assessorSigninUrl")'>@params.parameters("assessorSigninUrl")</a>)
+        <br> (<a href='@params.parameters("externalSigninUrl")'>@params.parameters("externalSigninUrl")</a>)
     } else {
         <br> (<a href='@params.parameters("adminSigninUrl")'>@params.parameters("adminSigninUrl")</a>)
     }
