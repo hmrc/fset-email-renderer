@@ -177,6 +177,11 @@ object FastStreamTemplateGroup {
       templateId = "fset_faststream_app_converted_to_sdip_confirmation",
       subject = Subject("We'll consider you for SDIP"),
       body = Body(html.fsetFaststreamAppConvertedToSdip.f, txt.fsetFaststreamAppConvertedToSdip.f)
+    ),
+    FastStreamTemplate(
+      templateId = "fset_faststream_remind_unsubmitted_assessors",
+      subject = Subject("You need to submit your availability"),
+      body = Body(html.fsetFaststreamRemindUnsubmittedAssessors.f, txt.fsetFaststreamRemindUnsubmittedAssessors.f)
     )
   )
 }

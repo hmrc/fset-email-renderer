@@ -20,7 +20,7 @@ import play.api.libs.json.{ JsValue, Json, Writes }
 
 case class NoTemplateFoundError(templateId: String) extends Exception
 
-case class RenderTemplateError(reason: String) extends Exception
+case class RenderTemplateError(reason: String) extends Exception(reason)
 
 object RenderTemplateError {
   implicit val writes: Writes[RenderTemplateError] = new Writes[RenderTemplateError] {
