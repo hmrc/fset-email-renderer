@@ -20,6 +20,7 @@ import org.scalatest.concurrent.ScalaFutures
 import org.scalatestplus.play.PlaySpec
 import uk.gov.hmrc.fsetemailrenderer.controllers.model.Params
 import uk.gov.hmrc.fsetemailrenderer.domain.{ NoTemplateFoundError, RenderResult, RenderTemplateError }
+import uk.gov.hmrc.fsetemailrenderer.templates.faststream.FastStreamTemplateGroup
 import uk.gov.hmrc.play.test.WithFakeApplication
 
 class RendererServiceSpec extends PlaySpec with ScalaFutures with WithFakeApplication {
@@ -48,6 +49,32 @@ class RendererServiceSpec extends PlaySpec with ScalaFutures with WithFakeApplic
 
       actual mustBe NoTemplateFoundError("some random template")
     }
+
+    "render valid email for each template" in {
+      val allParams = Params(Map("name" -> "Mr. Bin", "programme" -> "ABC", "activationCode" -> "XXX",
+        "resetPasswordCode" -> "9011", "newEmail" -> "true", "expireDateTime" -> "01/01/21", "timeLeft" -> "96",
+        "timeUnit" -> "ss", "etrayAdjustments" -> "true", "videoAdjustments" -> "y", "externalSigninUrl" -> "http://esu"))
+
+      val accost = s"Dear ${allParams.parameters("name")}"
+
+      FastStreamTemplateGroup.Templates.foreach(t => {
+        val res = service.render(t.templateId, allParams).futureValue
+        res mustBe a[RenderResult]
+        res match {
+          case rr: RenderResult =>
+            rr.subject mustBe t.subject.text
+            rr.html must include(htmlEncode(t.subject.text))
+            rr.html must include(accost)
+            rr.plain must include(accost)
+        }
+      })
+    }
   }
 
+  private def htmlEncode(text: String) = text.map {
+    case '\'' => "&#x27;"
+    case z => z
+  }.mkString("")
+
 }
+
