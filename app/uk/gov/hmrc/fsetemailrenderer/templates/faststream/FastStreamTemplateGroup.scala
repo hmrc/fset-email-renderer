@@ -182,6 +182,21 @@ object FastStreamTemplateGroup {
       templateId = "fset_faststream_remind_unsubmitted_assessors",
       subject = Subject("You need to submit your availability"),
       body = Body(html.fsetFaststreamRemindUnsubmittedAssessors.f, txt.fsetFaststreamRemindUnsubmittedAssessors.f)
+    ),
+    FastStreamTemplate(
+      templateId = "fset_faststream_notify_event_assessor_allocated",
+      subject = Subject("You've been assigned an event"),
+      body = Body(html.fsetFaststreamNotifyEventAssessorAllocated.f, txt.fsetFaststreamNotifyEventAssessorAllocated.f)
+    ),
+    FastStreamTemplate(
+      templateId = "fset_faststream_notify_event_assessor_unallocated",
+      subject = Subject("You've been removed from an event"),
+      body = Body(html.fsetFaststreamNotifyEventAssessorUnAllocated.f, txt.fsetFaststreamNotifyEventAssessorUnAllocated.f)
+    ),
+    FastStreamTemplate(
+      templateId = "fset_faststream_notify_event_assessor_allocation_changed",
+      subject = Subject("One of your events has changed"),
+      body = Body(html.fsetFaststreamNotifyEventAssessorAllocationChanged.f, txt.fsetFaststreamNotifyEventAssessorAllocationChanged.f)
     )
   )
 }

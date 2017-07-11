@@ -1,0 +1,21 @@
+@(params: uk.gov.hmrc.fsetemailrenderer.controllers.model.Params)
+@uk.gov.hmrc.fsetemailrenderer.templates.helpers.html.template_csr(params, "You've been assigned an event") {
+    @if(params.parameters("name").toString.trim.nonEmpty){
+        <p style="font-size: 19px; line-height: 1.315789474; margin: 0 0 30px 0;">Dear @{params.parameters("name")}</p>
+        <br/>
+    }
+    <p style="font-size: 19px; line-height: 1.315789474; margin: 0 0 30px 0;">You've been assigned an event on <b>@{params.parameters("eventDate")}</b>.</p>
+    <ul>
+        <li><b>Role:</b> @{params.parameters("eventRole")}</li>
+        <li><b>Event:</b> @{params.parameters("eventName")}</li>
+        <li><b>Location:</b> @{params.parameters("eventLocation")}</li>
+        <li><b>Time:</b> @{params.parameters("eventStartTime")} start</li>
+    </ul>
+    <h3>Please confirm your attendance ASAP</h3>
+    <p style="font-size: 19px; line-height: 1.315789474; margin: 0 0 30px 0;">Visit the sign in page to continue <a href='@params.parameters("externalSigninUrl")'>@params.parameters("externalSigninUrl")</a></p>
+    <p style="font-size: 19px; line-height: 1.315789474; margin: 0 0 30px 0;">Thank you</p>
+    <p style="font-size: 19px; line-height: 1.315789474; margin: 0 0 30px 0;">Fast Stream team</p>
+
+    <p style="font-size: 19px; line-height: 1.315789474; margin: 0 0 30px 0;">If you need more help, call us on 01276 400 333.</p>
+    <p style="font-size: 19px; line-height: 1.315789474; margin: 0 0 30px 0;">Do not reply to this email</p>
+}
