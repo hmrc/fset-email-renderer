@@ -1,15 +1,15 @@
 @(params: uk.gov.hmrc.fsetemailrenderer.controllers.model.Params)
 @if(params.parameters("name").toString.trim.nonEmpty){Dear @{params.parameters("name")}}
 
-Your event on @{param.parameters("eventDate") has changed.
+Your event on @{params.parameters("eventDate")} has changed.
 
-Role: @{param.parameters("eventRole")}
-Event: @{param.parameters("eventName")}
-Location: @{param.parameters("eventLocation")}
-Time: @{param.parameters("eventStartTime")} start
+Role: @{params.parameters("eventRole")}
+Event: @{params.parameters("eventName")}
+Location: @{params.parameters("eventLocation")}
+Time: @{params.parameters("eventStartTime")} start
 Please confirm your attendance ASAP
 
-Visit the sign in page to continue @params.parameters("externalSigninUrl").
+Visit the sign in page to continue @{params.parameters("externalSigninUrl")}.
 
 Thank you
 

@@ -3,13 +3,13 @@
 
 You've been assigned an event on @{params.parameters("eventDate")}.
 
-Role: @{param.parameters("eventRole")}
-Event: @{param.parameters("eventName")}
-Location: @{param.parameters("eventLocation")}
-Time: @{param.parameters("eventStartTime")} start
+Role: @{params.parameters("eventRole")}
+Event: @{params.parameters("eventName")}
+Location: @{params.parameters("eventLocation")}
+Time: @{params.parameters("eventStartTime")} start
 Please confirm your attendance ASAP
 
-Visit the sign in page to continue @params.parameters("externalSigninUrl").
+Visit the sign in page to continue @{params.parameters("externalSigninUrl")}.
 
 Thank you
 

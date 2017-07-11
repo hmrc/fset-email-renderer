@@ -5,7 +5,7 @@ You've been removed from the event on @{params.parameters("eventDate")}.
 
 No further action is required
 
-You can sign to view your schedule @params.parameters("externalSigninUrl").
+You can sign to view your schedule @{params.parameters("externalSigninUrl")}.
 
 Thank you
 
