@@ -1,0 +1,22 @@
+@(params: uk.gov.hmrc.fsetemailrenderer.controllers.model.Params)
+@if(params.parameters("name").toString.trim.nonEmpty){Dear @{params.parameters("name")}}
+
+Congratulations. You've passed your video interview.
+
+Your assessment is scheduled for @{params.parameters("eventDate")} at @{params.parameters("eventStartTime")}.
+
+We've confirmed this with you, so no further action is required
+
+If you cannot attend on this date, please call us on 01276 400 333. We may be able to reschedule your assessment.
+
+If you no longer wish to continue, please sign in and withdraw your application. We'll then stop sending any further emails.
+
+
+Thank you
+
+Fast Stream team
+
+
+If you need more help, call us on 01276 400 333.
+
+Do not reply to this email
