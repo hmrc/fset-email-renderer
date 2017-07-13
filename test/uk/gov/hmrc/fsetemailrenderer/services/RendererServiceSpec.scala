@@ -53,9 +53,10 @@ class RendererServiceSpec extends PlaySpec with ScalaFutures with WithFakeApplic
     "render valid email for each template" in {
       val allParams = Params(Map("name" -> "Mr. Bin", "programme" -> "ABC", "activationCode" -> "XXX",
         "resetPasswordCode" -> "9011", "newEmail" -> "true", "expireDateTime" -> "01/01/21", "timeLeft" -> "96",
-        "timeUnit" -> "ss", "etrayAdjustments" -> "true", "videoAdjustments" -> "y", "externalSigninUrl" -> "http://esu",
-      "eventDate" -> "2 November 1920", "eventRole" -> "Assessor", "eventName" -> "London Assessment Centre",
-        "eventLocation" -> "London", "eventStartTime" -> "9am"))
+        "timeUnit" -> "ss", "etrayAdjustments" -> "true", "videoAdjustments" -> "y",
+        "externalSigninUrl" -> "http://esu", "candidateSigninUrl" -> "http://esu",
+        "eventDate" -> "2 November 1920", "eventRole" -> "Assessor", "eventName" -> "London Assessment Centre",
+        "eventLocation" -> "London", "eventStartTime" -> "9am", "deadlineDate" -> "22 June 1939"))
 
       val accost = s"Dear ${allParams.parameters("name")}"
 

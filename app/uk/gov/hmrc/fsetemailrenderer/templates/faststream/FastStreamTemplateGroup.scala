@@ -197,6 +197,16 @@ object FastStreamTemplateGroup {
       templateId = "fset_faststream_notify_event_assessor_allocation_changed",
       subject = Subject("One of your events has changed"),
       body = Body(html.fsetFaststreamNotifyEventAssessorAllocationChanged.f, txt.fsetFaststreamNotifyEventAssessorAllocationChanged.f)
+    ),
+    FastStreamTemplate(
+      templateId = "fset_faststream_candidate_need_confirm_assessment_date",
+      subject = Subject("You need to confirm your assessment date"),
+      body = Body(html.fsetFaststreamCandidateAllocateConfirmationRequest.f, txt.fsetFaststreamCandidateAllocateConfirmationRequest.f)
+    ),
+    FastStreamTemplate(
+      templateId = "fset_faststream_candidate_assessment_scheduled",
+      subject = Subject("Your assessment has been scheduled"),
+      body = Body(html.fsetFaststreamCandidateAllocatedConfirmed.f, txt.fsetFaststreamCandidateAllocatedConfirmed.f)
     )
   )
 }
