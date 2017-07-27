@@ -1,0 +1,17 @@
+@(params: uk.gov.hmrc.fsetemailrenderer.controllers.model.Params)
+@if(params.parameters("name").toString.trim.nonEmpty){Dear @{params.parameters("name")}}
+
+You've been removed from the event on @{params.parameters("eventDate")}.
+
+We will contact you to reschedule, if necessary
+
+Sign to view your homepage @{params.parameters("candidateSigninUrl")}.
+
+Thank you
+
+Fast Stream team
+
+
+If you need more help, call us on 01276 400 333.
+
+Do not reply to this email
