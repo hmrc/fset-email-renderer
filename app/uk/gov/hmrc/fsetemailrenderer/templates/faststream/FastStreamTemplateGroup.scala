@@ -207,6 +207,11 @@ object FastStreamTemplateGroup {
       templateId = "fset_faststream_candidate_assessment_scheduled",
       subject = Subject("Your assessment has been scheduled"),
       body = Body(html.fsetFaststreamCandidateAllocatedConfirmed.f, txt.fsetFaststreamCandidateAllocatedConfirmed.f)
+    ),
+    FastStreamTemplate(
+      templateId = "fset_faststream_notify_event_candidate_unallocated",
+      subject = Subject("You've been removed from an event"),
+      body = Body(html.fsetFaststreamNotifyEventCandidateUnAllocated.f, txt.fsetFaststreamNotifyEventCandidateUnAllocated.f)
     )
   )
 }
