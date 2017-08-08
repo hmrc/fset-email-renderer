@@ -32,7 +32,9 @@ case class FastStreamTemplate(
 }
 
 object FastStreamTemplateGroup {
-  val Templates = Seq(
+  def Templates = AssessorTemplates ++ CandidateTemplates
+
+  val CandidateTemplates = Seq(
     FastStreamTemplate(
       templateId = "fset_faststream_registration_email",
       subject = Subject("Your activation code"),
@@ -62,11 +64,6 @@ object FastStreamTemplateGroup {
       templateId = "fset_faststream_account_email_changed_sent_to_old_address",
       subject = Subject("Your email address has been changed"),
       body = Body(html.fsetFaststreamEmailChangedSentToOldAddress.f, txt.fsetFaststreamEmailChangedSentToOldAddress.f)
-    ),
-    FastStreamTemplate(
-      templateId = "fset_faststream_assessor_email_changed_sent_to_new_address",
-      subject = Subject("Your email address has been changed"),
-      body = Body(html.fsetFaststreamEmailChangedSentToNewAddress.f, txt.fsetFaststreamEmailChangedSentToNewAddress.f)
     ),
     FastStreamTemplate(
       templateId = "fset_faststream_app_submit_confirmation",
@@ -179,6 +176,29 @@ object FastStreamTemplateGroup {
       body = Body(html.fsetFaststreamAppConvertedToSdip.f, txt.fsetFaststreamAppConvertedToSdip.f)
     ),
     FastStreamTemplate(
+      templateId = "fset_faststream_candidate_need_confirm_assessment_date",
+      subject = Subject("You need to confirm your assessment date"),
+      body = Body(html.fsetFaststreamCandidateAllocateConfirmationRequest.f, txt.fsetFaststreamCandidateAllocateConfirmationRequest.f)
+    ),
+    FastStreamTemplate(
+      templateId = "fset_faststream_candidate_assessment_scheduled",
+      subject = Subject("Your assessment has been scheduled"),
+      body = Body(html.fsetFaststreamCandidateAllocatedConfirmed.f, txt.fsetFaststreamCandidateAllocatedConfirmed.f)
+    ),
+    FastStreamTemplate(
+      templateId = "fset_faststream_notify_event_candidate_unallocated",
+      subject = Subject("You've been removed from an event"),
+      body = Body(html.fsetFaststreamNotifyEventCandidateUnAllocated.f, txt.fsetFaststreamNotifyEventCandidateUnAllocated.f)
+    )
+  )
+
+  val AssessorTemplates = Seq(
+    FastStreamTemplate(
+      templateId = "fset_faststream_assessor_email_changed_sent_to_new_address",
+      subject = Subject("Your email address has been changed"),
+      body = Body(html.fsetFaststreamEmailChangedSentToNewAddress.f, txt.fsetFaststreamEmailChangedSentToNewAddress.f)
+    ),
+    FastStreamTemplate(
       templateId = "fset_faststream_remind_unsubmitted_assessors",
       subject = Subject("You need to submit your availability"),
       body = Body(html.fsetFaststreamRemindUnsubmittedAssessors.f, txt.fsetFaststreamRemindUnsubmittedAssessors.f)
@@ -199,19 +219,9 @@ object FastStreamTemplateGroup {
       body = Body(html.fsetFaststreamNotifyEventAssessorAllocationChanged.f, txt.fsetFaststreamNotifyEventAssessorAllocationChanged.f)
     ),
     FastStreamTemplate(
-      templateId = "fset_faststream_candidate_need_confirm_assessment_date",
-      subject = Subject("You need to confirm your assessment date"),
-      body = Body(html.fsetFaststreamCandidateAllocateConfirmationRequest.f, txt.fsetFaststreamCandidateAllocateConfirmationRequest.f)
-    ),
-    FastStreamTemplate(
-      templateId = "fset_faststream_candidate_assessment_scheduled",
-      subject = Subject("Your assessment has been scheduled"),
-      body = Body(html.fsetFaststreamCandidateAllocatedConfirmed.f, txt.fsetFaststreamCandidateAllocatedConfirmed.f)
-    ),
-    FastStreamTemplate(
-      templateId = "fset_faststream_notify_event_candidate_unallocated",
-      subject = Subject("You've been removed from an event"),
-      body = Body(html.fsetFaststreamNotifyEventCandidateUnAllocated.f, txt.fsetFaststreamNotifyEventCandidateUnAllocated.f)
+      templateId = "fset_faststream_notify_assessor_new_event",
+      subject = Subject("New event: Share your availability"),
+      body = Body(html.fsetFaststreamNotifyAssessorNewEvent.f, txt.fsetFaststreamNotifyAssessorNewEvent.f)
     )
   )
 }
