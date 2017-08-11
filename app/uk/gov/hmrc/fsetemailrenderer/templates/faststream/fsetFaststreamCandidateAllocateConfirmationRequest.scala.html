@@ -5,17 +5,18 @@
         <br/>
     }
 
-<p style="font-size: 19px; line-height: 1.315789474; margin: 0 0 30px 0;">Congratulations. You've passed your video interview.</p>
+<p style="font-size: 19px; line-height: 1.315789474; margin: 0 0 30px 0;">Congratulations. You're through to the next stage.</p>
 
-<p style="font-size: 19px; line-height: 1.315789474; margin: 0 0 30px 0;">Your assessment is scheduled for @{params.parameters("eventDate")} at @{params.parameters("eventStartTime")}.</p>
+<p style="font-size: 19px; line-height: 1.315789474; margin: 0 0 30px 0;">Here are the details of your assessment:</p>
 
+<p style="font-size: 19px; line-height: 1.315789474; margin: 0 0 30px 0;"><b>Type:</b> @{params.parameters("eventType")}</b></p>
+<p style="font-size: 19px; line-height: 1.315789474; margin: 0 0 30px 0;"><b>Date and time:</b> @{params.parameters("eventDate")} at @{params.parameters("eventStartTime")}</p>
+<p style="font-size: 19px; line-height: 1.315789474; margin: 0 0 30px 0;"><b>Location:</b> @{params.parameters("eventVenue")}</p>
 
 <p style="font-size: 19px; line-height: 1.315789474; margin: 0 0 30px 0;"><b>Please confirm by 11:59pm on @{params.parameters("deadlineDate")} or you'll lose your booking.</b></p>
 
 <p style="font-size: 19px; line-height: 1.315789474; margin: 0 0 30px 0;">You need to sign in to see where your assessment will be held and to confirm you can attend <a href="@{params.parameters("candidateSigninUrl")}">@params.parameters("candidateSigninUrl")</a></p>
-
 <p style="font-size: 19px; line-height: 1.315789474; margin: 0 0 30px 0;">If you cannot attend on this date, please call us on 01276 400 333. We may be able to reschedule your assessment.</p>
-
 <p style="font-size: 19px; line-height: 1.315789474; margin: 0 0 30px 0;">If you no longer wish to continue, please sign in and withdraw your application. We'll then stop sending any further emails.</p>
 
 
