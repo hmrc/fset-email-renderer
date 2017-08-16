@@ -10,10 +10,6 @@ Type: @{params.parameters("eventType")}
 Date and time: @{params.parameters("eventDate")} at @{params.parameters("eventStartTime")}
 Location: @{params.parameters("eventVenue")}
 
-Congratulations. You've passed your video interview.
-
-Your assessment is scheduled for @{params.parameters("eventDate")} at @{params.parameters("eventStartTime")}.
-
 Please confirm by 11:59pm on @{params.parameters("deadlineDate")} or you'll lose your booking.
 
 You need to sign in to see where your assessment will be held and to confirm you can attend (@params.parameters("candidateSigninUrl"))
