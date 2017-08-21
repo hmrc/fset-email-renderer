@@ -57,7 +57,8 @@ class RendererServiceSpec extends PlaySpec with ScalaFutures with WithFakeApplic
         "externalSigninUrl" -> "http://esu", "candidateSigninUrl" -> "http://esu",
         "eventDate" -> "2 November 1920", "eventRole" -> "Assessor", "eventName" -> "London Assessment Centre",
         "eventLocation" -> "London", "eventStartTime" -> "9am", "deadlineDate" -> "22 June 1939",
-        "eventType" -> "FSAC", "eventVenue" -> "London, Bush House"))
+        "eventType" -> "FSAC", "eventVenue" -> "London, Bush House", "htmlBody" -> "<ul><li>Event 1</li></ul>",
+        "txtBody" -> "Event 1"))
 
       val accost = s"Dear ${allParams.parameters("name")}"
 
@@ -81,4 +82,3 @@ class RendererServiceSpec extends PlaySpec with ScalaFutures with WithFakeApplic
   }.mkString("")
 
 }
-
