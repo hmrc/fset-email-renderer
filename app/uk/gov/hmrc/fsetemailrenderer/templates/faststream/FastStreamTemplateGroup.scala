@@ -20,6 +20,7 @@ import java.util.Base64
 
 import uk.gov.hmrc.fsetemailrenderer.domain._
 import uk.gov.hmrc.fsetemailrenderer.MicroserviceAppConfig
+import uk.gov.hmrc.fsetemailrenderer.templates.faststream
 
 case class FastStreamTemplate(
   templateId: String,
@@ -212,6 +213,11 @@ object FastStreamTemplateGroup {
       templateId = "fset_faststream_notify_event_candidate_unallocated",
       subject = Subject("You've been removed from an event"),
       body = Body(html.fsetFaststreamNotifyEventCandidateUnAllocated.f, txt.fsetFaststreamNotifyEventCandidateUnAllocated.f)
+    ),
+    FastStreamTemplate(
+      templateId = "fset_faststream_notify_assessors_of_new_events",
+      subject = Subject("New events: Share your availability"),
+      body = Body(html.fsetFaststreamNotifyAssessorOfNewEvents.f, txt.fsetFaststreamNotifyAssessorOfNewEvents.f)
     )
   )
 }
