@@ -6,7 +6,7 @@
     }
     <p style="font-size: 19px; line-height: 1.315789474; margin: 0 0 30px 0;">New events have been created:</b>.</p>
 
-    @params.parameters("htmlBody")
+    @Html(params.parameters("htmlBody"))
 
     <p style="font-size: 19px; line-height: 1.315789474; margin: 0 0 30px 0;">Please share your availability as soon as possible <a href='@params.parameters("externalSigninUrl")'>@params.parameters("externalSigninUrl")</a></p>
     <p style="font-size: 19px; line-height: 1.315789474; margin: 0 0 30px 0;">Thank you</p>
