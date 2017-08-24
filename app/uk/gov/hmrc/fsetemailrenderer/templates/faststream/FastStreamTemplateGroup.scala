@@ -218,6 +218,11 @@ object FastStreamTemplateGroup {
       templateId = "fset_faststream_notify_assessors_of_new_events",
       subject = Subject("New events: Share your availability"),
       body = Body(html.fsetFaststreamNotifyAssessorOfNewEvents.f, txt.fsetFaststreamNotifyAssessorOfNewEvents.f)
+    ),
+    FastStreamTemplate(
+      templateId = "fset_faststream_notify_candidate_sift_entered_additional_questions",
+      subject = Subject("You need to answer some additional questions"),
+      body = Body(html.fsetFaststreamNotifyCandidateSiftEnteredAdditionalQuestions.f, txt.fsetFaststreamNotifyCandidateSiftEnteredAdditionalQuestions.f)
     )
   )
 }
