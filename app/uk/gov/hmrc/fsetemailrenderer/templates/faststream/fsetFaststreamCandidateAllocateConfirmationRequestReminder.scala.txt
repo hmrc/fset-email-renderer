@@ -2,8 +2,9 @@
 @if(params.parameters("name").toString.trim.nonEmpty){Dear @{params.parameters("name")}}
 
 
-
 Congratulations. You're through to the next stage.
+
+You need to confirm as soon as possible or you'll lose your booking.
 
 Here are the details of your assessment:
 
@@ -12,7 +13,9 @@ Date and time: @{params.parameters("eventDate")} at @{params.parameters("eventSt
 Location: @{params.parameters("eventVenue")}
 What you need: Read your event guide @{params.parameters("eventGuideUrl")}
 
-We've confirmed this with you, so no further action is required
+Please confirm by 11:59pm on @{params.parameters("deadlineDate")} or you'll lose your booking.
+
+You need to sign in to see where your assessment will be held and to confirm you can attend (@params.parameters("candidateSigninUrl"))
 
 If you cannot attend on this date, please call us on 01276 400 333. We may be able to reschedule your assessment.
 
