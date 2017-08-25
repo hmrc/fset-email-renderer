@@ -1,0 +1,14 @@
+@(params: uk.gov.hmrc.fsetemailrenderer.controllers.model.Params)@if(params.parameters("name").toString.trim.nonEmpty){Dear @{params.parameters("name")}}
+
+We've assessed your results for your final stage.
+
+You need to sign back in to view your results
+
+Sign in to the service.
+(https://www.apply-civil-service-fast-stream.service.gov.uk/fset-fast-stream/signin)
+
+Thank you
+
+Fast Stream team
+
+If you need more help, call us on 01276 400 333.

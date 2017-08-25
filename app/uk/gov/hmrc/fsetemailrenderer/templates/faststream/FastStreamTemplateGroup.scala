@@ -205,6 +205,11 @@ object FastStreamTemplateGroup {
       body = Body(html.fsetFaststreamCandidateAllocateConfirmationRequest.f, txt.fsetFaststreamCandidateAllocateConfirmationRequest.f)
     ),
     FastStreamTemplate(
+      templateId = "fset_faststream_candidate_need_confirm_assessment_date_reminder",
+      subject = Subject("URGENT - You need to confirm your assessment date"),
+      body = Body(html.fsetFaststreamCandidateAllocateConfirmationRequestReminder.f, txt.fsetFaststreamCandidateAllocateConfirmationRequestReminder.f)
+    ),
+    FastStreamTemplate(
       templateId = "fset_faststream_candidate_assessment_scheduled",
       subject = Subject("Your assessment has been scheduled"),
       body = Body(html.fsetFaststreamCandidateAllocatedConfirmed.f, txt.fsetFaststreamCandidateAllocatedConfirmed.f)
@@ -223,6 +228,16 @@ object FastStreamTemplateGroup {
       templateId = "fset_faststream_notify_candidate_sift_entered_additional_questions",
       subject = Subject("You need to answer some additional questions"),
       body = Body(html.fsetFaststreamNotifyCandidateSiftEnteredAdditionalQuestions.f, txt.fsetFaststreamNotifyCandidateSiftEnteredAdditionalQuestions.f)
+    ),
+    FastStreamTemplate(
+      templateId = "fset_faststream_app_final_failed",
+      subject = Subject("We've assessed your results"),
+      body = Body(html.fsetFaststreamAppFinalFailed.f, txt.fsetFaststreamAppFinalFailed.f)
+    ),
+    FastStreamTemplate(
+      templateId = "fset_faststream_app_final_success",
+      subject = Subject("Congratulations, you're on the Fast Stream!"),
+      body = Body(html.fsetFaststreamAppFinalSuccess.f, txt.fsetFaststreamAppFinalSuccess.f)
     )
   )
 }
