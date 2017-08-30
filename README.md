@@ -73,6 +73,10 @@ Note that to render logos correctly the assets frontend also needs to be started
 sm --start ASSETS_FRONTEND -f
 ```
 
+**You must set `programme` in the query string, when using preview feature.**
+
+You may also send template parameters in the query string as key=value pairs.
+
 #### Quick Preview
 Alternatively, you can do a preview of emails by starting the service using `sm` to preview the source, snapshot or release versions of the micro-service.
 
