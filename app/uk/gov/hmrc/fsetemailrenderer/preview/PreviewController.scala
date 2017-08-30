@@ -20,6 +20,7 @@ package uk.gov.hmrc.fsetemailrenderer.preview
 import play.api.libs.json.Json
 import play.api.mvc.{ Action, AnyContent }
 import play.twirl.api.Html
+import uk.gov.hmrc.fsetemailrenderer.controllers.model.Params
 import uk.gov.hmrc.fsetemailrenderer.services.{ RendererService, TemplateLocator }
 import uk.gov.hmrc.fsetemailrenderer.domain.Template
 import uk.gov.hmrc.play.microservice.controller.BaseController
@@ -46,15 +47,15 @@ trait PreviewController extends BaseController {
   }
 
   def previewHtml(templateId: String): Action[AnyContent] = Action.async { implicit request =>
-    rendererService.render(templateId, templateParams.paramsFor(templateId)).map { r =>
+    rendererService.render(templateId, getParams(templateId, request.queryString)).map { r =>
       Ok(Html(r.html))
     } recover {
-      case error  => BadRequest(Json.toJson(error.getMessage))
+      case error => BadRequest(Json.toJson(error.getMessage))
     }
   }
 
   def previewHtmlSource(templateId: String): Action[AnyContent] = Action.async { implicit request =>
-    rendererService.render(templateId, templateParams.paramsFor(templateId)) map { r =>
+    rendererService.render(templateId, getParams(templateId, request.queryString)).map { r =>
       Ok(r.html)
     } recover {
       case error => BadRequest(Json.toJson(error.getMessage))
@@ -62,10 +63,15 @@ trait PreviewController extends BaseController {
   }
 
   def previewText(templateId: String): Action[AnyContent] = Action.async { implicit request =>
-    rendererService.render(templateId, templateParams.paramsFor(templateId)) map { r =>
+    rendererService.render(templateId, getParams(templateId, request.queryString)).map { r =>
       Ok(r.plain)
     } recover {
       case error => BadRequest(Json.toJson(error.getMessage))
     }
   }
+
+  private def getParams(templateId: String, queryString: Map[String, Seq[String]]): Params = {
+    Params(templateParams.paramsFor(templateId).parameters ++ queryString.flatMap { case (k, v) => Map(k -> v.mkString(",")) })
+  }
+
 }

@@ -225,6 +225,11 @@ object FastStreamTemplateGroup {
       body = Body(html.fsetFaststreamNotifyAssessorOfNewEvents.f, txt.fsetFaststreamNotifyAssessorOfNewEvents.f)
     ),
     FastStreamTemplate(
+      templateId = "fset_faststream_notify_candidate_sift_entered_additional_questions",
+      subject = Subject("You need to answer some additional questions"),
+      body = Body(html.fsetFaststreamNotifyCandidateSiftEnteredAdditionalQuestions.f, txt.fsetFaststreamNotifyCandidateSiftEnteredAdditionalQuestions.f)
+    ),
+    FastStreamTemplate(
       templateId = "fset_faststream_app_final_failed",
       subject = Subject("We've assessed your results"),
       body = Body(html.fsetFaststreamAppFinalFailed.f, txt.fsetFaststreamAppFinalFailed.f)

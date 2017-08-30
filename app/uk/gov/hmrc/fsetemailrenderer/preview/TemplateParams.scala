@@ -16,6 +16,8 @@
 
 package uk.gov.hmrc.fsetemailrenderer.preview
 
+import java.time.{ LocalDate, LocalDateTime }
+
 import uk.gov.hmrc.fsetemailrenderer.controllers.model.Params
 
 object TemplateParams extends TemplateParams {
@@ -24,8 +26,31 @@ object TemplateParams extends TemplateParams {
 trait TemplateParams {
   def paramsFor(templateId: String): Params = sampleTemplateParameters(templateId)
 
-  val sampleTemplateParameters: Map[String, Params] = Map(
+  private val defaultParameters = Map(
+    "name" -> "Preferred name",
+    "eventRole" -> "Event Role",
+    "eventName" -> "Event Name",
+    "eventType" -> "Event Type",
+    "eventVenue" -> "Event Venue",
+    "eventLocation" -> "Event Location",
+    "eventGuideUrl" -> "Event Guide Url",
+    "eventDate" ->  LocalDate.now().toString,
+    "eventStartTime" -> LocalDateTime.now().toString,
+    "assessmentDateTime" -> LocalDateTime.now().toString,
+    "deadlineDate" -> LocalDate.now().toString,
+    "expireDateTime" -> LocalDateTime.now().toString,
+    "confirmByDate" -> LocalDate.now().toString,
+    "activationCode" -> "ACTIVA",
+    "resetPasswordCode" -> "RESETPA",
+    "newEmail" -> "newemail@example.com",
+    "onlineTestsAdjustments" -> "Online test adjustments",
+    "assessmentCenterAdjustments" -> "Assessment center adjustments",
+    "scheme" -> "Scheme"
+  )
+
+  private val sampleTemplateParameters: Map[String, Params] = Map(
     "sample1" -> Params(Map("name" -> "Mr. Hyde")),
     "sample2" -> Params(Map("name" -> "Dr. Jekyll"))
-  )
+  ).withDefaultValue(Params(defaultParameters))
+
 }
