@@ -7,7 +7,7 @@ At least one of your scheme preferences require you to answer some additional qu
 You should complete this within 7 days from the date of your email. Failure to do this will hold up your application.
 
 Sign in to continue
-(https://www.apply-civil-service-fast-stream.service.gov.uk/signin)
+(@params.parameters("candidateSigninUrl"))
 
 If you no longer wish to continue, please sign in and withdraw your application. We'll then stop sending any further emails.
 
