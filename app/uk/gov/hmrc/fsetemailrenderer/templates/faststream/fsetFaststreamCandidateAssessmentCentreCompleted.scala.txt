@@ -1,0 +1,22 @@
+@(params: uk.gov.hmrc.fsetemailrenderer.controllers.model.Params)
+@if(params.parameters("name").toString.trim.nonEmpty){Dear @{params.parameters("name")}}
+
+Congratulations. You've passed the Fast Stream Assessment Centre for at least one of your chosen schemes.
+
+At least one of these schemes require you to attend a final assessment.
+
+You'll be contacted as soon as your assessment date is scheduled
+
+Sign in to view your assessment feedback  (@params.parameters("candidateSigninUrl"))
+
+If you no longer wish to continue, please sign in and withdraw your application. We'll then stop sending any further emails.
+
+
+Thank you
+
+Fast Stream team
+
+
+If you need more help, call us on 01276 400 333.
+
+Do not reply to this email
