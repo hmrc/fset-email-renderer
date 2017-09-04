@@ -28,7 +28,7 @@ case class FastStreamTemplate(
   body: Body
 ) extends Template {
   val fromAddress: String = new String(Base64.getDecoder.decode(MicroserviceAppConfig.fastStreamInjectedParameters("fromAddress")))
-  val priority = MessagePriority.Standard
+  val priority = MessagePriority.Urgent
   val fromService = "faststream.gov.uk"
 }
 
