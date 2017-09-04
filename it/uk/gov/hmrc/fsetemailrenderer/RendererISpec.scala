@@ -19,7 +19,7 @@ class RendererISpec extends PlaySpec with OneServerPerSuite with WsScalaTestClie
       (result.json \ "service").as[String] mustBe "fasttrack.gov.uk"
       (result.json \ "plain").as[String] mustNot be(new EmptyWord())
       (result.json \ "html").as[String] mustNot be(new EmptyWord())
-      (result.json \ "priority").as[String] mustBe "standard"
+      (result.json \ "priority").as[String] mustBe "urgent"
     }
 
     "return NOT_FOUND if template does not exist" in {
