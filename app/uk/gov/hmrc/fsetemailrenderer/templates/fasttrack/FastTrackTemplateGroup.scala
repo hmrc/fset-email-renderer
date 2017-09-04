@@ -27,7 +27,7 @@ case class FastTrackTemplate(
   body: Body
 ) extends Template {
   val fromAddress: String = new String(Base64.getDecoder.decode(MicroserviceAppConfig.fastTrackInjectedParameters("fromAddress")))
-  val priority = MessagePriority.Standard
+  val priority = MessagePriority.Urgent
   val fromService = "fasttrack.gov.uk"
 }
 
