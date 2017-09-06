@@ -2,12 +2,16 @@
 
 Congratulations, you've successfully passed all the required stages.
 
-You're now on the Civil Service Fast Stream, for your chosen scheme:
+We're delighted to be able to offer you a role on the Civil Service Fast Stream, for your chosen scheme:
 @{params.parameters("scheme")}
 
-You'll be contacted by your scheme soon.
+You'll be contacted by your scheme's recruitment team soon, with further details of your job offer.
 
 Please understand that this is an extremely busy period, so don't worry if you're not contacted immediately.
+
+Next steps
+
+To enable us to complete your pre-employment checks, follow the instructions on the Fast Stream website at https://faststream.gov.uk/faqs.
 
 Sign in to your homepage at any time
 (https://www.apply-civil-service-fast-stream.service.gov.uk/fset-fast-stream/signin)
