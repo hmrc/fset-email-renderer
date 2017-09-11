@@ -145,11 +145,6 @@ object FastStreamTemplateGroup {
       body = Body(html.fsetFaststreamAppOnlineSdipFsTestFailed.f, txt.fsetFaststreamAppOnlineSdipFsTestFailed.f)
     ),
     FastStreamTemplate(
-      templateId = "fset_faststream_app_online_sdip_fs_test_success",
-      subject = Subject("You can now access your interview account for SDIP"),
-      body = Body(html.fsetFaststreamAppOnlineSdipFsTestSuccess.f, txt.fsetFaststreamAppOnlineSdipFsTestSuccess.f)
-    ),
-    FastStreamTemplate(
       templateId = "fset_faststream_app_online_phase3_test_success",
       subject = Subject("You've passed the video interview"),
       body = Body(html.fsetFaststreamAppOnlinePhase3TestSuccess.f, txt.fsetFaststreamAppOnlinePhase3TestSuccess.f)
