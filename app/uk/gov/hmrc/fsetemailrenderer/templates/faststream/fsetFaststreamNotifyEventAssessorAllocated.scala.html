@@ -5,13 +5,13 @@
         <br/>
     }
     <p style="font-size: 19px; line-height: 1.315789474; margin: 0 0 30px 0;">You've been assigned an event on <b>@{params.parameters("eventDate")}</b>.</p>
-    <ul>
-        <li><b>Role:</b> @{params.parameters("eventRole")}</li>
-        <li><b>Event:</b> @{params.parameters("eventName")}</li>
-        <li><b>Location:</b> @{params.parameters("eventLocation")}</li>
-        <li><b>Time:</b> @{params.parameters("eventStartTime")} start</li>
+    <ul style="font-size: 19px; line-height: 1.315789474; margin: 0 0 30px 0;">
+        <li style="font-size: 19px; line-height: 1.315789474; margin: 0 0 30px 0;"><b>Role:</b> @{params.parameters("eventRole")}</li>
+        <li style="font-size: 19px; line-height: 1.315789474; margin: 0 0 30px 0;"><b>Event:</b> @{params.parameters("eventName")}</li>
+        <li style="font-size: 19px; line-height: 1.315789474; margin: 0 0 30px 0;"><b>Location:</b> @{params.parameters("eventLocation")}</li>
+        <li style="font-size: 19px; line-height: 1.315789474; margin: 0 0 30px 0;"><b>Time:</b> @{params.parameters("eventStartTime")} start</li>
     </ul>
-    <h3>Please confirm your attendance as soon as possible.</h3>
+    <h3 style="font-size: 19px; line-height: 1.315789474; margin: 0 0 30px 0;">Please confirm your attendance as soon as possible.</h3>
     <p style="font-size: 19px; line-height: 1.315789474; margin: 0 0 30px 0;">Visit the sign in page to continue <a href='@params.parameters("externalSigninUrl")'>@params.parameters("externalSigninUrl")</a></p>
     <p style="font-size: 19px; line-height: 1.315789474; margin: 0 0 30px 0;">Thank you</p>
     <p style="font-size: 19px; line-height: 1.315789474; margin: 0 0 30px 0;">Fast Stream team</p>
