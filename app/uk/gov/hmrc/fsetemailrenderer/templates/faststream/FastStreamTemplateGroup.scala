@@ -231,7 +231,7 @@ object FastStreamTemplateGroup {
     ),
     FastStreamTemplate(
       templateId = "fset_faststream_app_final_failed",
-      subject = Subject("We've assessed your results"),
+      subject = Subject("We've assessed your results for your final stage."),
       body = Body(html.fsetFaststreamAppFinalFailed.f, txt.fsetFaststreamAppFinalFailed.f)
     ),
     FastStreamTemplate(
