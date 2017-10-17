@@ -11,6 +11,10 @@ Please confirm your attendance as soon as possible.
 
 Visit the sign in page to continue @{params.parameters("externalSigninUrl")}.
 
+@if(params.parameters("eventRole") == "Exercise Marker" || params.parameters("eventRole") == "Quality Assurance Coordinator") {
+    If you provided your availability as 'Home' on this day please ignore the location above and work from home if you prefer.
+
+}
 Thank you
 
 Fast Stream team

@@ -13,6 +13,15 @@
     </ul>
     <h3 style="font-size: 19px; line-height: 1.315789474; margin: 0 0 30px 0;">Please confirm your attendance as soon as possible.</h3>
     <p style="font-size: 19px; line-height: 1.315789474; margin: 0 0 30px 0;">Visit the sign in page to continue <a href='@params.parameters("externalSigninUrl")'>@params.parameters("externalSigninUrl")</a></p>
+
+    @if(params.parameters("eventRole") == "Exercise Marker" || params.parameters("eventRole") == "Quality Assurance Coordinator") {
+        <p style="font-size: 19px;
+            line-height: 1.315789474;
+            margin: 0 0 30px 0;">
+            If you provided your availability as 'Home' on this day please ignore the location above and work from home if you prefer.
+        </p>
+
+    }
     <p style="font-size: 19px; line-height: 1.315789474; margin: 0 0 30px 0;">Thank you</p>
     <p style="font-size: 19px; line-height: 1.315789474; margin: 0 0 30px 0;">Fast Stream team</p>
 
