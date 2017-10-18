@@ -14,7 +14,7 @@
     <h3 style="font-size: 19px; line-height: 1.315789474; margin: 0 0 30px 0;">Please confirm your attendance as soon as possible.</h3>
     <p style="font-size: 19px; line-height: 1.315789474; margin: 0 0 30px 0;">Visit the sign in page to continue <a href='@params.parameters("externalSigninUrl")'>@params.parameters("externalSigninUrl")</a></p>
 
-    @if(params.parameters("eventRole") == "Exercise Marker" || params.parameters("eventRole") == "Quality Assurance Coordinator") {
+    @if(List("EXERCISE_MARKER", "QUALITY_ASSURANCE_COORDINATOR").contains(params.parameters("eventRoleKey"))) {
         <p style="font-size: 19px;
             line-height: 1.315789474;
             margin: 0 0 30px 0;">

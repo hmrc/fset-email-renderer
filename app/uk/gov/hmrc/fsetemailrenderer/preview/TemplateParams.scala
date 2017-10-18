@@ -29,6 +29,7 @@ trait TemplateParams {
   private val defaultParameters = Map(
     "name" -> "Preferred name",
     "eventRole" -> "Event Role",
+    "eventRoleKey" -> "Event Role Key",
     "eventName" -> "Event Name",
     "eventType" -> "Event Type",
     "eventVenue" -> "Event Venue",

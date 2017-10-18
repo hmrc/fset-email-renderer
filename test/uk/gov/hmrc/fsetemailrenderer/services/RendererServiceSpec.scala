@@ -55,7 +55,7 @@ class RendererServiceSpec extends PlaySpec with ScalaFutures with WithFakeApplic
         "resetPasswordCode" -> "9011", "newEmail" -> "true", "expireDateTime" -> "01/01/21", "timeLeft" -> "96",
         "timeUnit" -> "ss", "etrayAdjustments" -> "true", "videoAdjustments" -> "y",
         "externalSigninUrl" -> "http://esu", "candidateSigninUrl" -> "http://esu", "eventGuideUrl" -> "http://fifi",
-        "eventDate" -> "2 November 1920", "eventRole" -> "Assessor", "eventName" -> "London Assessment Centre",
+        "eventDate" -> "2 November 1920", "eventRole" -> "Assessor", "eventRoleKey" -> "ASSESSOR", "eventName" -> "London Assessment Centre",
         "eventLocation" -> "London", "eventStartTime" -> "9am", "deadlineDate" -> "22 June 1939",
         "eventType" -> "FSAC", "eventVenue" -> "London, Bush House", "htmlBody" -> "<ul><li>Event 1</li></ul>",
         "txtBody" -> "Event 1", "scheme" -> "GORC"))
