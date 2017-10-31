@@ -150,6 +150,11 @@ object FastStreamTemplateGroup {
       body = Body(html.fsetFaststreamAppOnlinePhase3TestSuccess.f, txt.fsetFaststreamAppOnlinePhase3TestSuccess.f)
     ),
     FastStreamTemplate(
+      templateId = "fset_faststream_app_online_phase3_test_success_sdipfs",
+      subject = Subject("We've assessed your results"),
+      body = Body(html.fsetFaststreamAppOnlinePhase3SdipFsTestSuccess.f, txt.fsetFaststreamAppOnlinePhase3SdipFsTestSuccess.f)
+    ),
+    FastStreamTemplate(
       templateId = "fset_faststream_app_online_fast-pass_accepted",
       subject = Subject("We've confirmed your Fast Pass"),
       body = Body(html.fsetFaststreamAppOnlineFastPassAccepted.f, txt.fsetFaststreamAppOnlineFastPassAccepted.f)
