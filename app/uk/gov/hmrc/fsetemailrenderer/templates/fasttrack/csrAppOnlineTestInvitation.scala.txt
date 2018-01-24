@@ -2,7 +2,7 @@
 @if(params.parameters("name").toString.trim.nonEmpty){Dear @{params.parameters("name")}}
 
 We're pleased to let you know that the online tests are now available for you to complete.
-You have 7 days to complete the tests.
+You have 5 days to complete the tests.
 The tests will expire on @{params.parameters("expireDateTime")}. You'll no longer be able to take the tests after this date.
 You'll need to sign in to start the tests (https://www.apply-civil-service-apprenticeship.service.gov.uk/fset-fast-track/signin).
 
