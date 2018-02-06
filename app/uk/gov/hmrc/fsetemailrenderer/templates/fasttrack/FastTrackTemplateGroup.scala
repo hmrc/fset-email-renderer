@@ -84,6 +84,11 @@ object FastTrackTemplateGroup {
       body = Body(html.csrAssessmentConfirmationReminder.f, txt.csrAssessmentConfirmationReminder.f)
     ),
     FastTrackTemplate(
+      templateId = "csr_app_assessment_centre_expired",
+      subject = Subject("Time has run out on your assessment centre invitation"),
+      body = Body(html.csrAssessmentCentreExpired.f, txt.csrAssessmentCentreExpired.f)
+    ),
+    FastTrackTemplate(
       templateId = "csr_app_assessment_centre_passed",
       subject = Subject("Assessment centre results"),
       body = Body(html.csrAssessmentCentrePassed.f, txt.csrAssessmentCentrePassed.f)
