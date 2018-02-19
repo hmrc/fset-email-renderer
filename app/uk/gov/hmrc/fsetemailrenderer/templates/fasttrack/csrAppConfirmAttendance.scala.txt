@@ -5,7 +5,7 @@ Congratulations. You've passed your online tests.
 Your assessment is scheduled for @{params.parameters("assessmentDateTime")}.
 Please confirm by 11:59pm on @{params.parameters("confirmByDate")} or you'll lose your booking.
 You need to sign in to see where your assessment will be held and to confirm you can attend (https://www.apply-civil-service-apprenticeship.service.gov.uk/fset-fast-track/signin).
-If you cannot attend on this date, please call us on 03000 54 22 11. We may be able to reschedule your assessment.
+If you cannot attend on this date, please call us on 0207 451 8222. We may be able to reschedule your assessment.
 Please note that late cancellation or failure to confirm as requested may result in us being unable to offer you an alternative assessment appointment.
 If you no longer wish to continue, please sign in and withdraw your application. We'll then stop sending any further emails.
 
@@ -13,5 +13,5 @@ Thank you
 
 Fast Track apprenticeship team
 
-If you need more help, call us on 03000 54 22 11.
+If you need more help, call us on 0207 451 8222.
 Do not reply to this email
