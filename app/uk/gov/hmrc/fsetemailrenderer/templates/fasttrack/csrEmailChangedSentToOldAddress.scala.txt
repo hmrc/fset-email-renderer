@@ -3,7 +3,7 @@
 
 The email address for your account has been changed to @{params.parameters("newEmail")}
 You need to sign in with your new email address
-If you think there's been a mistake, please contact us on 03000 54 22 11
+If you think there's been a mistake, please contact us on 0207 451 8222
 
 Thank you
 
