@@ -1,7 +1,5 @@
 @(params: uk.gov.hmrc.fsetemailrenderer.controllers.model.Params)@if(params.parameters("name").toString.trim.nonEmpty){Dear @{params.parameters("name")}}
 
-Your sift phase has expired.
-
 Time has run out to submit your sift details.
 
 You can still sign in to your home page.
