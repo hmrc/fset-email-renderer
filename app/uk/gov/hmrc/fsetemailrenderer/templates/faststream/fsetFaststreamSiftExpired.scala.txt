@@ -1,0 +1,14 @@
+@(params: uk.gov.hmrc.fsetemailrenderer.controllers.model.Params)@if(params.parameters("name").toString.trim.nonEmpty){Dear @{params.parameters("name")}}
+
+Your sift phase has expired.
+
+Time has run out to submit your sift details.
+
+You can still sign in to your home page.
+(https://www.apply-civil-service-fast-stream.service.gov.uk/fset-fast-stream/signin)
+
+Thank you
+
+Fast Stream team
+
+If you need more help, call us on 01276 400 333.
