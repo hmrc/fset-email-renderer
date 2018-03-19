@@ -235,6 +235,11 @@ object FastStreamTemplateGroup {
       body = Body(html.fsetFaststreamNotifyCandidateSiftEnteredAdditionalQuestions.f, txt.fsetFaststreamNotifyCandidateSiftEnteredAdditionalQuestions.f)
     ),
     FastStreamTemplate(
+      templateId = "fset_faststream_sift_expired",
+      subject = Subject("Time has run out to submit your sift details"),
+      body = Body(html.fsetFaststreamSiftExpired.f, txt.fsetFaststreamSiftExpired.f)
+    ),
+    FastStreamTemplate(
       templateId = "fset_faststream_app_final_failed",
       subject = Subject("We've assessed your results"),
       body = Body(html.fsetFaststreamAppFinalFailed.f, txt.fsetFaststreamAppFinalFailed.f)
