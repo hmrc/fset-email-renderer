@@ -16,8 +16,8 @@ private object AppDependencies {
     "uk.gov.hmrc"             %% "microservice-bootstrap"    % "6.13.0",
     "uk.gov.hmrc"             %% "play-url-binders"          % "2.1.0",
     "uk.gov.hmrc"             %% "domain"                    % "5.0.0",
-    "uk.gov.hmrc"             %% "hmrctest"                  % "2.0.0" % "test,it",
-    "org.scalatest"           %% "scalatest"                 % "2.2.6" % "test,it",
+    "uk.gov.hmrc"             %% "hmrctest"                  % "3.0.0" % "test,it",
+//    "org.scalatest"           %% "scalatest"                 % "2.2.6" % "test,it",
     "org.pegdown"             %  "pegdown"                   % "1.6.0" % "test,it",
     "com.typesafe.play"       %% "play-test"                 % PlayVersion.current % "test,it",
     "org.scalatestplus.play"  %% "scalatestplus-play"        % "1.5.1" % "test,it"
