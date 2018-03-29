@@ -27,7 +27,6 @@ class RendererServiceSpec extends PlaySpec with ScalaFutures with WithFakeApplic
 
   val service = RendererService
 
-  /*
   "Render service" must {
     "render a template" in {
 
@@ -50,7 +49,7 @@ class RendererServiceSpec extends PlaySpec with ScalaFutures with WithFakeApplic
       actual mustBe NoTemplateFoundError("some random template")
     }
 
-    "render valid email for each template" ignore {
+    "render valid email for each template" in {
       val allParams = Params(Map("name" -> "Mr. Bin", "programme" -> "ABC", "activationCode" -> "XXX",
         "resetPasswordCode" -> "9011", "newEmail" -> "true", "expireDateTime" -> "01/01/21", "timeLeft" -> "96",
         "timeUnit" -> "ss", "etrayAdjustments" -> "true", "videoAdjustments" -> "y",
@@ -75,7 +74,6 @@ class RendererServiceSpec extends PlaySpec with ScalaFutures with WithFakeApplic
       })
     }
   }
-  */
 
   private def htmlEncode(text: String) = text.map {
     case '\'' => "&#x27;"
