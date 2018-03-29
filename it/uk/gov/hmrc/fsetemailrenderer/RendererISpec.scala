@@ -9,9 +9,11 @@ import play.api.test.Helpers._
 class RendererISpec extends PlaySpec with OneServerPerSuite with WsScalaTestClient {
 
   "email renderer" should {
+    implicit val wsClient = play.api.libs.ws.WS.client
+
     "render the html and text content for fast track registration template" in {
-      val result = await(wsUrl("/templates/fset_fasttrack_registration_email").
-        post(Json.obj("parameters" -> Json.obj("name" -> "Dr. Bruce Banner", "activationCode" -> "AABBCC", "programme" -> "fasttrack"))))
+      val result = await(wsUrl("/templates/fset_fasttrack_registration_email")
+        .post(Json.obj("parameters" -> Json.obj("name" -> "Dr. Bruce Banner", "activationCode" -> "AABBCC", "programme" -> "fasttrack"))))
 
       result.status mustBe Status.OK
       (result.json \ "fromAddress").as[String] mustBe "Fast Track team <noreply@csr.vtdev.uk>"
@@ -23,14 +25,14 @@ class RendererISpec extends PlaySpec with OneServerPerSuite with WsScalaTestClie
     }
 
     "return NOT_FOUND if template does not exist" in {
-      val result = await(wsUrl("/templates/notExistTemplate").
-        post(Json.obj("parameters" -> Json.obj("name" -> "Dr. Bruce Banner", "programme" -> "fasttrack"))))
+      val result = await(wsUrl("/templates/notExistTemplate")
+        .post(Json.obj("parameters" -> Json.obj("name" -> "Dr. Bruce Banner", "programme" -> "fasttrack"))))
       result.status mustBe NOT_FOUND
     }
 
     "return BAD_REQUEST if required parameter is not in the request body" in {
-      val result = await(wsUrl("/templates/fset_fasttrack_registration_email").
-        post(Json.obj("parameters" -> Json.obj("name" -> "Dr. Bruce Banner", "programme" -> "fasttrack"))))
+      val result = await(wsUrl("/templates/fset_fasttrack_registration_email")
+        .post(Json.obj("parameters" -> Json.obj("name" -> "Dr. Bruce Banner", "programme" -> "fasttrack"))))
       result.status mustBe BAD_REQUEST
       (result.json \ "reason").as[String] mustBe "Failed to render template: key not found: activationCode"
     }
