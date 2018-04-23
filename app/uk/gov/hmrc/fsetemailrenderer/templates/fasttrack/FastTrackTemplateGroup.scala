@@ -187,6 +187,11 @@ object FastTrackTemplateGroup {
       templateId = "fset_fasttrack_adjustments_changed",
       subject = Subject("Your adjustments have been updated"),
       body = Body(html.csrAdjustmentsChanged.f, txt.csrAdjustmentsChanged.f)
+    ),
+    FastTrackTemplate(
+      templateId = "fset_fasttrack_app_withdrawn_by_service_team",
+      subject = Subject("Your application has been withdrawn"),
+      body = Body(html.fsetFasttrackAppWithdrawnByServiceTeam.f, txt.fsetFasttrackAppWithdrawnByServiceTeam.f)
     )
   )
 }
