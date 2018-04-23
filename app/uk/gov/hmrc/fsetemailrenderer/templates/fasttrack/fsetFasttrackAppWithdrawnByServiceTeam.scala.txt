@@ -1,0 +1,12 @@
+@(params: uk.gov.hmrc.fsetemailrenderer.controllers.model.Params)@if(params.parameters("name").toString.trim.nonEmpty){Dear @{params.parameters("name")}}
+
+Your application has been withdrawn by a member of our service team.
+
+If you believe there has been a mistake, please contact us.
+
+Thank you
+
+Fast Track apprenticeship team
+
+If you need more help, call us on 0207 451 8222.
+Do not reply to this email
