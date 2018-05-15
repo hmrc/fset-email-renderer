@@ -4,7 +4,7 @@ You have @{params.parameters("timeLeft")} @{params.parameters("timeUnit")} to pr
 
 Your time will expire on @{params.parameters("expireDateTime")}
 
-You must provide the additional information details and complete a numeric tests,if applicable,before they expire
+You must provide the additional information details and complete a numeric test, if applicable, before they expire
 
 Sign in to your home page to finish the requirements.
 (https://www.apply-civil-service-fast-stream.service.gov.uk/fset-fast-stream/signin)
