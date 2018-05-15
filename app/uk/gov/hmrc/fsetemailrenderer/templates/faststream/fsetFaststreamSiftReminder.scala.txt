@@ -1,10 +1,10 @@
 @(params: uk.gov.hmrc.fsetemailrenderer.controllers.model.Params)@if(params.parameters("name").toString.trim.nonEmpty){Dear @{params.parameters("name")}}
 
-You have @{params.parameters("timeLeft")} @{params.parameters("timeUnit")} to provide additional information.
+You have @{params.parameters("timeLeft")} @{params.parameters("timeUnit")} to provide additional information details and complete a numeric test, if applicable,before they expire
 
 Your time will expire on @{params.parameters("expireDateTime")}
 
-You must finish the requirements before they expire
+You must provide the additional information details and complete a numeric tests,if applicable,before they expire
 
 Sign in to your home page to finish the requirements.
 (https://www.apply-civil-service-fast-stream.service.gov.uk/fset-fast-stream/signin)
