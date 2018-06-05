@@ -235,6 +235,11 @@ object FastStreamTemplateGroup {
       body = Body(html.fsetFaststreamNotifyCandidateSiftEnteredAdditionalQuestions.f, txt.fsetFaststreamNotifyCandidateSiftEnteredAdditionalQuestions.f)
     ),
     FastStreamTemplate(
+      templateId = "fset_faststream_sift_numeric_test_invitation",
+      subject = Subject("You can start your additional information numeric test now"),
+      body = Body(html.fsetFaststreamSiftNumericTestInvitation.f, txt.fsetFaststreamSiftNumericTestInvitation.f)
+    ),
+    FastStreamTemplate(
       templateId = "fset_faststream_sift_reminder",
       subject = Subject("You need to submit your additional information details"),
       body = Body(html.fsetFaststreamSiftReminder.f, txt.fsetFaststreamSiftReminder.f)
