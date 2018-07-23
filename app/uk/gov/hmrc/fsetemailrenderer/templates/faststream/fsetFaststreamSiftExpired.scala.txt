@@ -1,6 +1,8 @@
 @(params: uk.gov.hmrc.fsetemailrenderer.controllers.model.Params)@if(params.parameters("name").toString.trim.nonEmpty){Dear @{params.parameters("name")}}
 
-Time has run out to submit your additional information details.
+Time has run out to answer your additional questions.
+
+Your additional questions have expired.
 
 You can still sign in to your home page.
 (https://www.apply-civil-service-fast-stream.service.gov.uk/fset-fast-stream/signin)
