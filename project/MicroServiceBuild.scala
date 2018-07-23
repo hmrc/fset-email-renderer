@@ -13,7 +13,7 @@ object MicroServiceBuild extends Build with MicroService {
 private object AppDependencies {
   def apply()= Seq(
     ws,
-    "uk.gov.hmrc"             %% "microservice-bootstrap"    % "6.17.0",
+    "uk.gov.hmrc"             %% "microservice-bootstrap"    % "6.18.0",
     "uk.gov.hmrc"             %% "play-url-binders"          % "2.1.0",
     "uk.gov.hmrc"             %% "domain"                    % "5.1.0",
     "uk.gov.hmrc"             %% "hmrctest"                  % "3.0.0" % "test,it",
