@@ -62,10 +62,10 @@ Templates can be fiddly to get right as they can ordinarily only be viewed by ac
 
 ```bash
 cd $WORKSPACE/hmrc-email-renderer
-sbt -Dhttp.port=8950 -Dapplication.router=testOnlyDoNotUseInAppConf.Routes run
+sbt -Dhttp.port=8960 -Dapplication.router=testOnlyDoNotUseInAppConf.Routes run
 ```
 
-You should be able to list all the templates available for preview from [http://localhost:8950/hmrc-email-renderer/test-only/preview](http://localhost:8950/hmrc-email-renderer/test-only/preview).
+You should be able to list all the templates available for preview from [http://localhost:8950/hmrc-email-renderer/test-only/preview](http://localhost:8960/hmrc-email-renderer/test-only/preview).
 
 Note that to render logos correctly the assets frontend also needs to be started using
 
