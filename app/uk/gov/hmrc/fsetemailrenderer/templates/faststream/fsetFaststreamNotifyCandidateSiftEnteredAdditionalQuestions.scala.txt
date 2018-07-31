@@ -2,8 +2,9 @@
 
 Congratulations. You're through to the next stage.
 
-At least one of your scheme preferences requires you to answer some additional questions.
-This may include a numerical test. The numerical test is timed and you'll have 25 minutes to complete it. If we've agreed you require extra time, this will be added to the 25 minutes.
+At least one of your scheme preferences requires you to answer some additional questions.This may include a numerical test.
+
+The numerical test is timed and you'll have 25 minutes to complete it. If we've agreed you require extra time, this will be added to the 25 minutes.
 
 Your additional questions, which may include a numerical test, will expire in 7 days. You must complete all the additional questions before they expire.
 
@@ -19,3 +20,5 @@ Thank you
 Fast Stream team
 
 If you need more help, call us on 01276 400 333.
+
+Do not reply to this email
