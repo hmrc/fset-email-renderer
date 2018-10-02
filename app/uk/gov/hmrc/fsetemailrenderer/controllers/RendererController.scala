@@ -26,22 +26,22 @@ import uk.gov.hmrc.play.microservice.controller.BaseController
 import scala.concurrent.ExecutionContext.Implicits.global
 
 object RendererController extends RendererController {
-	val rendererService = RendererService
+  val rendererService = RendererService
 }
 
 trait RendererController extends BaseController {
 
-	def rendererService: RendererService
+  def rendererService: RendererService
 
-	def render(templateId: String): Action[JsValue] = Action.async(parse.json) { implicit request =>
-		withJsonBody[Params] { params =>
+  def render(templateId: String): Action[JsValue] = Action.async(parse.json) { implicit request =>
+      withJsonBody[Params] { params =>
 
-			rendererService.render(templateId, params).map { renderResult =>
-			  Ok(Json.toJson(renderResult))
+      rendererService.render(templateId, params).map { renderResult =>
+        Ok(Json.toJson(renderResult))
       } recover {
-				case _: NoTemplateFoundError => NotFound
-				case error: RenderTemplateError => BadRequest(Json.toJson(error))
-			}
-		}
-	}
+        case _: NoTemplateFoundError => NotFound
+        case error: RenderTemplateError => BadRequest(Json.toJson(error))
+      }
+    }
+  }
 }

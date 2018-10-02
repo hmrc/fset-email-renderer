@@ -18,7 +18,6 @@ package uk.gov.hmrc.fsetemailrenderer
 
 import play.api.Configuration
 import play.api.Play.{ configuration, current }
-import uk.gov.hmrc.play.config.RunMode.env
 
 object MicroserviceAppConfig {
 
@@ -26,8 +25,6 @@ object MicroserviceAppConfig {
     _.entrySet.toMap.mapValues(_.unwrapped.toString)
   }.getOrElse(Map.empty[String, String])
 
-  lazy val fastTrackInjectedParameters: Map[String, String] = toMap(configuration.getConfig(s"$env.microservice.fasttrack.injectedParameters"))
-  lazy val fastStreamInjectedParameters: Map[String, String] = toMap(configuration.getConfig(s"$env.microservice.faststream.injectedParameters"))
+  lazy val fastTrackInjectedParameters: Map[String, String] = toMap(configuration.getConfig("microservice.fasttrack.injectedParameters"))
+  lazy val fastStreamInjectedParameters: Map[String, String] = toMap(configuration.getConfig("microservice.faststream.injectedParameters"))
 }
-
-

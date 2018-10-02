@@ -21,6 +21,7 @@ trait MicroService {
   lazy val plugins : Seq[Plugins] = Seq.empty
   lazy val playSettings : Seq[Setting[_]] = Seq.empty
 
+  lazy val compileScalastyle = taskKey[Unit]("compileScalastyle")
 
   lazy val microservice = Project(appName, file("."))
     .enablePlugins(Seq(play.sbt.PlayScala,SbtAutoBuildPlugin, SbtGitVersioning, SbtDistributablesPlugin) ++ plugins : _*)
@@ -43,6 +44,8 @@ trait MicroService {
       addTestReportOption(IntegrationTest, "int-test-reports"),
       testGrouping in IntegrationTest := oneForkedJvmPerTest((definedTests in IntegrationTest).value),
       parallelExecution in IntegrationTest := false)
+    .settings(compileScalastyle := org.scalastyle.sbt.ScalastylePlugin.scalastyle.in(Compile).toTask("").value,
+      (compile in Compile) <<= (compile in Compile) dependsOn compileScalastyle)
     .settings(
       resolvers += Resolver.bintrayRepo("hmrc", "releases"),
       resolvers += Resolver.jcenterRepo
