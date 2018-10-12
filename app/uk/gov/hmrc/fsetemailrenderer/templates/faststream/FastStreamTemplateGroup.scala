@@ -47,7 +47,8 @@ object FastStreamTemplateGroup {
     FastStreamTemplate(
       templateId = "fset_faststream_external_registration_activated_no_password_email",
       subject = Subject("Your account has been created"),
-      body = Body(html.fsetFaststreamExternalRegistrationActivatedNoPasswordEmail.f, txt.fsetFaststreamExternalRegistrationActivatedNoPasswordEmail.f)
+      body = Body(html.fsetFaststreamExternalRegistrationActivatedNoPasswordEmail.f,
+        txt.fsetFaststreamExternalRegistrationActivatedNoPasswordEmail.f)
     ),
     FastStreamTemplate(
       templateId = "fset_faststream_reset_password_email",
@@ -207,7 +208,8 @@ object FastStreamTemplateGroup {
     FastStreamTemplate(
       templateId = "fset_faststream_candidate_need_confirm_assessment_date_reminder",
       subject = Subject("URGENT - You need to confirm your assessment date"),
-      body = Body(html.fsetFaststreamCandidateAllocateConfirmationRequestReminder.f, txt.fsetFaststreamCandidateAllocateConfirmationRequestReminder.f)
+      body = Body(html.fsetFaststreamCandidateAllocateConfirmationRequestReminder.f,
+        txt.fsetFaststreamCandidateAllocateConfirmationRequestReminder.f)
     ),
     FastStreamTemplate(
       templateId = "fset_faststream_candidate_assessment_scheduled",
@@ -232,7 +234,8 @@ object FastStreamTemplateGroup {
     FastStreamTemplate(
       templateId = "fset_faststream_notify_candidate_sift_entered_additional_questions",
       subject = Subject("You need to answer some additional questions"),
-      body = Body(html.fsetFaststreamNotifyCandidateSiftEnteredAdditionalQuestions.f, txt.fsetFaststreamNotifyCandidateSiftEnteredAdditionalQuestions.f)
+      body = Body(html.fsetFaststreamNotifyCandidateSiftEnteredAdditionalQuestions.f,
+        txt.fsetFaststreamNotifyCandidateSiftEnteredAdditionalQuestions.f)
     ),
     FastStreamTemplate(
       templateId = "fset_faststream_sift_numeric_test_invitation",
