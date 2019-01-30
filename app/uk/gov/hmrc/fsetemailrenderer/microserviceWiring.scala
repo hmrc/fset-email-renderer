@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 HM Revenue & Customs
+ * Copyright 2019 HM Revenue & Customs
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,6 +16,8 @@
 
 package uk.gov.hmrc.fsetemailrenderer
 
+import com.typesafe.config.Config
+import play.api.Play
 import uk.gov.hmrc.http._
 import uk.gov.hmrc.http.hooks.{ HttpHook, HttpHooks }
 import uk.gov.hmrc.play.audit.http.connector.AuditConnector
@@ -27,6 +29,8 @@ import uk.gov.hmrc.play.microservice.config.LoadAuditingConfig
 trait WSHttp extends HttpGet with WSGet with HttpPut with WSPut with HttpPost with WSPost with HttpDelete with WSDelete
   with HttpPatch with WSPatch with HttpHooks with AppName {
   override val hooks: Seq[HttpHook] = NoneRequired
+  override val configuration: Option[Config] = Option(Play.current.configuration.underlying)
+  override def appNameConfiguration = Play.current.configuration
 }
 
 object WSHttp extends WSHttp
@@ -37,4 +41,6 @@ object MicroserviceAuditConnector extends AuditConnector {
 
 object MicroserviceAuthConnector extends AuthConnector with ServicesConfig with WSHttp {
   override val authBaseUrl = baseUrl("auth")
+  override def mode = Play.current.mode
+  override def runModeConfiguration = Play.current.configuration
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 HM Revenue & Customs
+ * Copyright 2019 HM Revenue & Customs
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,8 +17,7 @@
 package uk.gov.hmrc.fsetemailrenderer.domain
 
 import java.nio.charset.StandardCharsets
-
-import com.ning.http.util.Base64
+import org.asynchttpclient.util.Base64
 import play.api.libs.json.{JsValue, Json, Writes}
 import uk.gov.hmrc.fsetemailrenderer.domain.MessagePriority.MessagePriority
 
