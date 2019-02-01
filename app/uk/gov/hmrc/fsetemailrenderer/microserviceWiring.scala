@@ -29,7 +29,7 @@ import uk.gov.hmrc.play.microservice.config.LoadAuditingConfig
 trait WSHttp extends HttpGet with WSGet with HttpPut with WSPut with HttpPost with WSPost with HttpDelete with WSDelete
   with HttpPatch with WSPatch with HttpHooks with AppName {
   override val hooks: Seq[HttpHook] = NoneRequired
-  override val configuration: Option[Config] = Option(Play.current.configuration.underlying)
+  override lazy val configuration: Option[Config] = Option(Play.current.configuration.underlying)
   override def appNameConfiguration = Play.current.configuration
 }
 
