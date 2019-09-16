@@ -1,8 +1,8 @@
 @(params: uk.gov.hmrc.fsetemailrenderer.controllers.model.Params)@if(params.parameters("name").toString.trim.nonEmpty){Dear @{params.parameters("name")}}
 
-Your e-tray has expired.
+Your workbased scenarios has expired.
 
-Time has run out for you to finish the e-tray
+Time has run out for you to finish the workbased scenarios.
 
 You can still sign in to your homepage
 (https://www.apply-civil-service-fast-stream.service.gov.uk/fset-fast-stream/signin)

@@ -82,7 +82,7 @@ object FastStreamTemplateGroup {
     ),
     FastStreamTemplate(
       templateId = "fset_faststream_app_phase2_test_invitation",
-      subject = Subject("You can start your etray exercise now"),
+      subject = Subject("You can start your workbased scenarios exercise now"),
       body = Body(html.fsetFaststreamAppPhase2TestInvitation.f, txt.fsetFaststreamAppPhase2TestInvitation.f)
     ),
     FastStreamTemplate(
@@ -97,7 +97,7 @@ object FastStreamTemplateGroup {
     ),
     FastStreamTemplate(
       templateId = "fset_faststream_app_online_phase2_test_expired",
-      subject = Subject("Your e-tray has expired"),
+      subject = Subject("Your workbased scenarios has expired"),
       body = Body(html.fsetFaststreamAppOnlinePhase2TestExpired.f, txt.fsetFaststreamAppOnlinePhase2TestExpired.f)
     ),
     FastStreamTemplate(
@@ -112,7 +112,7 @@ object FastStreamTemplateGroup {
     ),
     FastStreamTemplate(
       templateId = "fset_faststream_app_online_phase2_test_reminder",
-      subject = Subject("You need to finish the e-tray"),
+      subject = Subject("You need to finish the workbased scenarios"),
       body = Body(html.fsetFaststreamAppOnlinePhase2TestReminder.f, txt.fsetFaststreamAppOnlinePhase2TestReminder.f)
     ),
     FastStreamTemplate(
