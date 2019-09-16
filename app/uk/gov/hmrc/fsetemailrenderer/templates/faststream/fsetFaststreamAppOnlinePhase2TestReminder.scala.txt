@@ -1,12 +1,12 @@
 @(params: uk.gov.hmrc.fsetemailrenderer.controllers.model.Params)@if(params.parameters("name").toString.trim.nonEmpty){Dear @{params.parameters("name")}}
 
-You have @{params.parameters("timeLeft")} @{params.parameters("timeUnit")} to finish the e-tray.
+You have @{params.parameters("timeLeft")} @{params.parameters("timeUnit")} to finish the workbased scenarios
 
-The e-tray will expire on @{params.parameters("expireDateTime")}
+The workbased scenarios will expire on @{params.parameters("expireDateTime")}
 
-You must finish the e-tray before it expires
+You must finish the workbased scenarios before it expires
 
-Sign in to your home page to finish the e-tray.
+Sign in to your home page to finish the workbased scenarios.
 (https://www.apply-civil-service-fast-stream.service.gov.uk/fset-fast-stream/signin)
 
 Thank you

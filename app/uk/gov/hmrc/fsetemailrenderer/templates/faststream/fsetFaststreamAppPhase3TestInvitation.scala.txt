@@ -1,6 +1,6 @@
 @(params: uk.gov.hmrc.fsetemailrenderer.controllers.model.Params)@if(params.parameters("name").toString.trim.nonEmpty){Dear @{params.parameters("name")}}
 
-Congratulations, you've passed the e-tray.
+Congratulations, you've passed the workbased scenarios.
 The video interview is now ready for you to finish.
 
 Access to the video interview will expire on @{params.parameters("expireDateTime")}.
