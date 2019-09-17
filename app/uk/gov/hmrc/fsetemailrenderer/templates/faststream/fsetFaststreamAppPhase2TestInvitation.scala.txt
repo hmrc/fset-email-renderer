@@ -6,9 +6,6 @@ The workbased scenarios is now ready for you to complete.
 
 You must finish your workbased scenarios before @{params.parameters("expireDateTime")}.
 
-The workbased scenarios is timed and you'll have 80 minutes to complete it.
-If we've agreed you require extra time, this will be added to the 80 minutes.
-
 Sign in to your home page to start the workbased scenarios.
 (https://www.apply-civil-service-fast-stream.service.gov.uk/fset-fast-stream/signin)
 
