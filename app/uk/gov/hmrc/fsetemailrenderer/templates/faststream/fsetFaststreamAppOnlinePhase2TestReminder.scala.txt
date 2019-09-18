@@ -4,7 +4,7 @@ You have @{params.parameters("timeLeft")} @{params.parameters("timeUnit")} to fi
 
 The workbased scenarios will expire on @{params.parameters("expireDateTime")}
 
-You must finish the workbased scenarios before it expires
+You must finish the workbased scenarios before they expire
 
 Sign in to your home page to finish the workbased scenarios.
 (https://www.apply-civil-service-fast-stream.service.gov.uk/fset-fast-stream/signin)
