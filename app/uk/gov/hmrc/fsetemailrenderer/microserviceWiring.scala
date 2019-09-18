@@ -16,6 +16,7 @@
 
 package uk.gov.hmrc.fsetemailrenderer
 
+import akka.actor.ActorSystem
 import com.typesafe.config.Config
 import play.api.Play
 import uk.gov.hmrc.http._
@@ -31,6 +32,7 @@ trait WSHttp extends HttpGet with WSGet with HttpPut with WSPut with HttpPost wi
   override val hooks: Seq[HttpHook] = NoneRequired
   override lazy val configuration: Option[Config] = Option(Play.current.configuration.underlying)
   override def appNameConfiguration = Play.current.configuration
+  override def actorSystem: ActorSystem = Play.current.actorSystem
 }
 
 object WSHttp extends WSHttp
