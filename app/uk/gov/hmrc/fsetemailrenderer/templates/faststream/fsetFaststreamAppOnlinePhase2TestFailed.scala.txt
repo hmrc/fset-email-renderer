@@ -1,6 +1,6 @@
 @(params: uk.gov.hmrc.fsetemailrenderer.controllers.model.Params)@if(params.parameters("name").toString.trim.nonEmpty){Dear @{params.parameters("name")}}
 
-We've assessed your results for the e-tray.
+We've assessed your results for the workbased scenarios.
 
 You need to sign back in to view your results
 
