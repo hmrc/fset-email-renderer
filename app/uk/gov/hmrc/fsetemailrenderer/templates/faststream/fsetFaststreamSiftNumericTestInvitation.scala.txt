@@ -6,9 +6,6 @@ The test is now ready for you to complete.
 
 You must finish your test before @{params.parameters("expireDateTime")}.
 
-The numeric test is timed and you'll have 25 minutes to complete it.
-If we've agreed you require extra time, this will be added to the 25 minutes.
-
 
 Sign in to your home page to start the test.
 (https://www.apply-civil-service-fast-stream.service.gov.uk/fset-fast-stream/signin)
