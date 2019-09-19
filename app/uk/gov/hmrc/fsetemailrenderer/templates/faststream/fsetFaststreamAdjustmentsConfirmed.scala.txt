@@ -4,7 +4,6 @@ Thank you for confirming your adjustments.
 
 We've saved your adjustments as:
 
-@{params.parameters("etrayAdjustments")}
 @{params.parameters("videoAdjustments")}
 
 If you believe there has been a mistake, please contact us.
