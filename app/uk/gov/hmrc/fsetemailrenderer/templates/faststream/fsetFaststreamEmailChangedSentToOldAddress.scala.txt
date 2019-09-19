@@ -3,7 +3,8 @@
 
 The email address for your account has been changed to @{params.parameters("newEmail")}
 You need to sign in with your new email address
-If you think there's been a mistake, please contact us on 01276 400 333
+If you think there's been a mistake, please contact us on 0207 276 6969 or email us at faststream.applicationsupport@@cabinetoffice.gov.uk.
+
 
 Thank you
 
