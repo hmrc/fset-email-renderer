@@ -5,7 +5,6 @@ We've updated your adjustments.
 
 Your updated adjustments are:
 
-@{params.parameters("etrayAdjustments")}
 @{params.parameters("videoAdjustments")}
 
 If you believe there has been a mistake, please contact us.
