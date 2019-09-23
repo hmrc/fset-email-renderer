@@ -1,6 +1,6 @@
 @(params: uk.gov.hmrc.fsetemailrenderer.controllers.model.Params)@if(params.parameters("name").toString.trim.nonEmpty){Dear @{params.parameters("name")}}
 
-Your workbased scenarios has expired.
+Your workbased scenarios have expired.
 
 Time has run out for you to finish the workbased scenarios.
 
