@@ -97,7 +97,7 @@ object FastStreamTemplateGroup {
     ),
     FastStreamTemplate(
       templateId = "fset_faststream_app_online_phase2_test_expired",
-      subject = Subject("Your workbased scenarios has expired"),
+      subject = Subject("Your workbased scenarios have expired"),
       body = Body(html.fsetFaststreamAppOnlinePhase2TestExpired.f, txt.fsetFaststreamAppOnlinePhase2TestExpired.f)
     ),
     FastStreamTemplate(
