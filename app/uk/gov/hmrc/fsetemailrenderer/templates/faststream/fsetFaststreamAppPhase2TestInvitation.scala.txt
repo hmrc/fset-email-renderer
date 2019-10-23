@@ -2,7 +2,7 @@
 
 Congratulations, you've passed the online exercises.
 
-The workbased scenarios are now ready for you to complete.
+The workbased scenarios are now ready for you to complete. This will consist of two tests.
 
 You must finish your workbased scenarios before @{params.parameters("expireDateTime")}.
 
