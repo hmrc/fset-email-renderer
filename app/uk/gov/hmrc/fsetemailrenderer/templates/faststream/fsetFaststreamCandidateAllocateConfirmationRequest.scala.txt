@@ -15,7 +15,7 @@ Please confirm by 11:59pm on @{params.parameters("deadlineDate")} or you'll lose
 
 You need to sign in to see where your assessment will be held and to confirm you can attend (@params.parameters("candidateSigninUrl"))
 
-If you cannot attend on this date, please call us on 01276 400 333. We may be able to reschedule your assessment.
+If you cannot attend on this date, please call us on 0207 276 6969. We may be able to reschedule your assessment.
 
 If you no longer wish to continue, please sign in and withdraw your application. We'll then stop sending any further emails.
 
