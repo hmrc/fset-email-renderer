@@ -5,7 +5,6 @@ You've been assigned an event on @{params.parameters("eventDate")}.
 
 Role: @{params.parameters("eventRole")}
 Event: @{params.parameters("eventName")}
-Location: @{params.parameters("eventLocation")}
 Time: @{params.parameters("eventStartTime")} start
 Please confirm your attendance as soon as possible.
 

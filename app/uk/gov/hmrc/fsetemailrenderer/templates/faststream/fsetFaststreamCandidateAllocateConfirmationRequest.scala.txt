@@ -8,7 +8,6 @@ Here are the details of your assessment:
 
 Type: @{params.parameters("eventType")}
 Date and time: @{params.parameters("eventDate")} at @{params.parameters("eventStartTime")}
-Location: @{params.parameters("eventVenue")}
 What you need: Read your event guide @{params.parameters("eventGuideUrl")}
 
 Please confirm by 11:59pm on @{params.parameters("deadlineDate")} or you'll lose your booking.
