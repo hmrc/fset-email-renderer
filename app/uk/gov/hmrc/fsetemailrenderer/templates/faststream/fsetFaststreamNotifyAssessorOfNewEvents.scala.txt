@@ -7,6 +7,8 @@ New events have been created:
 
 Please share your availability as soon as possible @{params.parameters("externalSigninUrl")}.
 
+Please note that FSAC is now completed online so all assessors can work remotely (i.e. from home).
+
 Thank you
 
 Fast Stream team
