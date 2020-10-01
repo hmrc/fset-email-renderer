@@ -6,6 +6,8 @@ We've saved your adjustments as:
 
 @{params.parameters("videoAdjustments")}
 
+The Online Tests and Work Based Scenarios are untimed and require no extra time adjustments.
+
 If you believe there has been a mistake, please contact us.
 
 Thank you
