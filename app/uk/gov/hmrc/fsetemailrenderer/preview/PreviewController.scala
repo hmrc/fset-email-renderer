@@ -16,31 +16,28 @@
 
 package uk.gov.hmrc.fsetemailrenderer.preview
 
-
+import javax.inject.{Inject, Singleton}
 import play.api.libs.json.Json
-import play.api.mvc.{ Action, AnyContent }
+import play.api.mvc.{Action, AnyContent, ControllerComponents}
 import play.twirl.api.Html
+import uk.gov.hmrc.fsetemailrenderer.MicroserviceAppConfig
 import uk.gov.hmrc.fsetemailrenderer.controllers.model.Params
-import uk.gov.hmrc.fsetemailrenderer.services.{ RendererService, TemplateLocator }
 import uk.gov.hmrc.fsetemailrenderer.domain.Template
-import uk.gov.hmrc.play.microservice.controller.BaseController
+import uk.gov.hmrc.fsetemailrenderer.services.{RendererService, TemplateLocator}
+import uk.gov.hmrc.play.bootstrap.backend.controller.BackendController
 
-import scala.concurrent.Future
-import scala.concurrent.ExecutionContext.Implicits.global
+import scala.concurrent.{ExecutionContext, Future}
 
-object PreviewController extends PreviewController {
-  val templates: Seq[Template] = TemplateLocator.templates
-  val rendererService: RendererService = RendererService
+@Singleton
+class PreviewController @Inject() (
+  cc: ControllerComponents,
+  config: MicroserviceAppConfig,
+  rendererService: RendererService
+)(implicit val ec: ExecutionContext) extends BackendController(cc) {
+
+  val templates: Seq[Template] = TemplateLocator.templates(config)
+
   val templateParams: TemplateParams = TemplateParams
-}
-
-trait PreviewController extends BaseController {
-
-  def templates: Seq[Template]
-
-  def templateParams: TemplateParams
-
-  def rendererService: RendererService
 
   def preview: Action[AnyContent] = Action.async { implicit request =>
     Future.successful(Ok(views.html.preview(templates)))

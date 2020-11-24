@@ -17,8 +17,9 @@
 package uk.gov.hmrc.fsetemailrenderer.domain
 
 import java.nio.charset.StandardCharsets
-import org.asynchttpclient.util.Base64
+
 import play.api.libs.json.{JsValue, Json, Writes}
+import play.shaded.ahc.org.asynchttpclient.util.Base64
 import uk.gov.hmrc.fsetemailrenderer.domain.MessagePriority.MessagePriority
 
 case class RenderResult(plain: String,

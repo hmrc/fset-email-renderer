@@ -17,15 +17,44 @@
 package uk.gov.hmrc.fsetemailrenderer.services
 
 import org.scalatest.concurrent.ScalaFutures
+import org.scalatestplus.mockito.MockitoSugar
 import org.scalatestplus.play.PlaySpec
+import play.api.i18n.MessagesApi
+import play.api.mvc.Results
+import play.api.test.Helpers.stubControllerComponents
+import play.api.{Configuration, Environment}
+import uk.gov.hmrc.fsetemailrenderer.MicroserviceAppConfig
 import uk.gov.hmrc.fsetemailrenderer.controllers.model.Params
-import uk.gov.hmrc.fsetemailrenderer.domain.{ NoTemplateFoundError, RenderResult, RenderTemplateError }
+import uk.gov.hmrc.fsetemailrenderer.domain.{NoTemplateFoundError, RenderResult, RenderTemplateError}
 import uk.gov.hmrc.fsetemailrenderer.templates.faststream.FastStreamTemplateGroup
 import uk.gov.hmrc.play.test.WithFakeApplication
 
-class RendererServiceSpec extends PlaySpec with ScalaFutures with WithFakeApplication {
+class RendererServiceSpec extends PlaySpec with MockitoSugar with ScalaFutures with WithFakeApplication {
 
-  val service = RendererService
+  val mockConfiguration = mock[Configuration]
+  val mockEnvironment = mock[Environment]
+  val mockConfig = new MicroserviceAppConfig(mockConfiguration, mockEnvironment) {
+    override lazy val fastStreamInjectedParameters: Map[String, String]
+    = Map("adminSigninUrl" -> "adminSigninUrl-REPLACE-ME",
+    "externalSigninUrl"-> "externalSigninUrl-REPLACE-ME",
+    "candidateSigninUrl" -> "candidateSigninUrl-REPLACE-ME",
+      "fromAddress"-> "RmFzdCBTdHJlYW0gdGVhbSA8bm9yZXBseUBjc3IudnRkZXYudWs+",
+    "staticAssetUrlPrefix"-> "http://localhost:9032",
+    "staticAssetVersion"-> "/assets/2.230.0",
+    "borderColour"-> "#005EA5")
+
+    override lazy val fastTrackInjectedParameters: Map[String, String]
+    = Map("adminSigninUrl" -> "adminSigninUrl-REPLACE-ME",
+      "externalSigninUrl"-> "externalSigninUrl-REPLACE-ME",
+      "candidateSigninUrl" -> "candidateSigninUrl-REPLACE-ME",
+      "fromAddress"-> "RmFzdCBTdHJlYW0gdGVhbSA8bm9yZXBseUBjc3IudnRkZXYudWs+",
+      "staticAssetUrlPrefix"-> "http://localhost:9032",
+      "staticAssetVersion"-> "/assets/2.230.0",
+      "borderColour"-> "#005EA5")
+  }
+
+
+  val service = new RendererService(mockConfig)
 
   "Render service" must {
     "render a template" in {
@@ -61,7 +90,7 @@ class RendererServiceSpec extends PlaySpec with ScalaFutures with WithFakeApplic
 
       val accost = s"Dear ${allParams.parameters("name")}"
 
-      FastStreamTemplateGroup.Templates.foreach(t => {
+      FastStreamTemplateGroup.templates(mockConfig).foreach(t => {
         val res = service.render(t.templateId, allParams).futureValue
         res mustBe a[RenderResult]
         res match {

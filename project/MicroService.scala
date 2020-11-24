@@ -1,5 +1,3 @@
-import play.sbt.routes.RoutesKeys.{routesGenerator, StaticRoutesGenerator}
-
 import sbt.Keys._
 import sbt.Tests.{SubProcess, Group}
 import sbt._
@@ -35,13 +33,13 @@ trait MicroService {
       scalaVersion := "2.11.11",
       libraryDependencies ++= appDependencies,
       retrieveManaged := true,
-      evictionWarningOptions in update := EvictionWarningOptions.default.withWarnScalaVersionEviction(false),
-      routesGenerator := StaticRoutesGenerator
+      evictionWarningOptions in update := EvictionWarningOptions.default.withWarnScalaVersionEviction(false)
     )
     .configs(IntegrationTest)
-    .settings(inConfig(IntegrationTest)(Defaults.itSettings): _*)
+    .settings(inConfig(IntegrationTest)(sbt.Defaults.itSettings): _*)
     .settings(
-      Keys.fork in IntegrationTest := false,
+      Keys.fork in IntegrationTest := true,
+      javaOptions in IntegrationTest += "-Dlogger.resource=logback-test.xml",
       unmanagedSourceDirectories in IntegrationTest <<= (baseDirectory in IntegrationTest)(base => Seq(base / "it")),
       addTestReportOption(IntegrationTest, "int-test-reports"),
       testGrouping in IntegrationTest := oneForkedJvmPerTest((definedTests in IntegrationTest).value),

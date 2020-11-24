@@ -16,31 +16,28 @@
 
 package uk.gov.hmrc.fsetemailrenderer.services
 
+import javax.inject.{Inject, Singleton}
+import uk.gov.hmrc.fsetemailrenderer.MicroserviceAppConfig
 import uk.gov.hmrc.fsetemailrenderer.controllers.model.Params
 import uk.gov.hmrc.fsetemailrenderer.domain._
-import uk.gov.hmrc.fsetemailrenderer.MicroserviceAppConfig._
 
 import scala.concurrent.Future
-import scala.util.{ Failure, Success }
+import scala.util.Failure
 
+@Singleton
+class RendererService @Inject() (config: MicroserviceAppConfig) {
 
-object RendererService extends RendererService {
-  override def templateLocator: TemplateLocator = TemplateLocator
-}
-
-trait RendererService {
-
-  def templateLocator: TemplateLocator
+  def templateLocator: TemplateLocator = TemplateLocator
 
   private def getInjectedParameters(programme: String) = if (programme == "faststream") {
-    fastStreamInjectedParameters
+    config.fastStreamInjectedParameters
   } else {
-    fastTrackInjectedParameters
+    config.fastTrackInjectedParameters
   }
 
   def render(templateId: String, params: Params): Future[RenderResult] = Future.fromTry {
     params.parameters.get("programme").map { programme =>
-      templateLocator.findTemplate(templateId).map { template =>
+      templateLocator.findTemplate(config, templateId).map { template =>
         val additionalParams = getInjectedParameters(programme)
         template.render(params.copy(parameters = params.parameters ++ additionalParams)) match {
           case Failure(error) => Failure(RenderTemplateError(error.getMessage))
