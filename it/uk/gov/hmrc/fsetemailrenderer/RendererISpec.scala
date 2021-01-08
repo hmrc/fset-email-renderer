@@ -1,15 +1,17 @@
 package uk.gov.hmrc.fsetemailrenderer
 
 import org.scalatest.words.EmptyWord
-import org.scalatestplus.play.{OneServerPerSuite, PlaySpec, WsScalaTestClient}
+import org.scalatestplus.play.guice.GuiceOneServerPerSuite
+import org.scalatestplus.play.{PlaySpec, WsScalaTestClient}
 import play.api.http.Status
 import play.api.libs.json.Json
 import play.api.test.Helpers._
 
-class RendererISpec extends PlaySpec with OneServerPerSuite with WsScalaTestClient {
+class RendererISpec extends PlaySpec with GuiceOneServerPerSuite with WsScalaTestClient {
+  implicit val wsClient: play.api.libs.ws.WSClient =
+    app.injector.instanceOf[play.api.libs.ws.WSClient]
 
   "email renderer" should {
-    implicit val wsClient = play.api.libs.ws.WS.client
 
     "render the html and text content for fast track registration template" in {
       val result = await(wsUrl("/templates/fset_fasttrack_registration_email")

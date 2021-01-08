@@ -18,31 +18,27 @@ package uk.gov.hmrc.fsetemailrenderer
 
 import akka.actor.ActorSystem
 import com.typesafe.config.Config
-import play.api.Play
+import javax.inject.{Inject, Singleton}
+import play.api.Application
+import play.api.libs.ws.WSClient
 import uk.gov.hmrc.http._
-import uk.gov.hmrc.http.hooks.{ HttpHook, HttpHooks }
-import uk.gov.hmrc.play.audit.http.connector.AuditConnector
-import uk.gov.hmrc.play.auth.microservice.connectors.AuthConnector
-import uk.gov.hmrc.play.config.{ AppName, ServicesConfig }
+import uk.gov.hmrc.http.hooks.HttpHooks
 import uk.gov.hmrc.play.http.ws._
-import uk.gov.hmrc.play.microservice.config.LoadAuditingConfig
 
-trait WSHttp extends HttpGet with WSGet with HttpPut with WSPut with HttpPost with WSPost with HttpDelete with WSDelete
-  with HttpPatch with WSPatch with HttpHooks with AppName {
-  override val hooks: Seq[HttpHook] = NoneRequired
-  override lazy val configuration: Option[Config] = Option(Play.current.configuration.underlying)
-  override def appNameConfiguration = Play.current.configuration
-  override def actorSystem: ActorSystem = Play.current.actorSystem
-}
-
-object WSHttp extends WSHttp
-
-object MicroserviceAuditConnector extends AuditConnector {
-  override lazy val auditingConfig = LoadAuditingConfig("auditing")
-}
-
-object MicroserviceAuthConnector extends AuthConnector with ServicesConfig with WSHttp {
-  override val authBaseUrl = baseUrl("auth")
-  override def mode = Play.current.mode
-  override def runModeConfiguration = Play.current.configuration
+@Singleton
+class WSHttp @Inject() (
+  val wsClient: WSClient,
+  application: Application)
+  extends HttpGet
+    with WSGet
+    with HttpPut
+    with WSPut
+    with HttpPost
+    with WSPost
+    with HttpDelete
+    with WSDelete
+    with HttpPatch with WSPatch with HttpHooks {
+  override val hooks = NoneRequired
+  override lazy val configuration: Option[Config] = Option(application.configuration.underlying)
+  override lazy val actorSystem: ActorSystem = application.actorSystem
 }

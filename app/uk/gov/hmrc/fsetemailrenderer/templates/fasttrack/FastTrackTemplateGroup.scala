@@ -22,176 +22,211 @@ import uk.gov.hmrc.fsetemailrenderer.domain._
 import uk.gov.hmrc.fsetemailrenderer.MicroserviceAppConfig
 
 case class FastTrackTemplate(
+  config: MicroserviceAppConfig,
   templateId: String,
   subject: Subject,
   body: Body
 ) extends Template {
-  val fromAddress: String = new String(Base64.getDecoder.decode(MicroserviceAppConfig.fastTrackInjectedParameters("fromAddress")))
+  val fromAddress: String = new String(Base64.getDecoder.decode(config.fastTrackInjectedParameters("fromAddress")))
   val priority = MessagePriority.Urgent
   val fromService = "fasttrack.gov.uk"
 }
 
 object FastTrackTemplateGroup {
-  val Templates = Seq(
+  // scalastyle:off method.length
+  def templates(config: MicroserviceAppConfig) = Seq(
     FastTrackTemplate(
+      config,
       templateId = "csr_registration_email",
       subject = Subject("Your activation code"),
       body = Body(html.csrRegistrationEmail.f, txt.csrRegistrationEmail.f)
     ),
     FastTrackTemplate(
+      config,
       templateId = "csr_registration_activated_no_password_email",
       subject = Subject("New account has been created"),
       body = Body(html.csrRegistrationActivatedNoPasswordEmail.f, txt.csrRegistrationActivatedNoPasswordEmail.f)
     ),
     FastTrackTemplate(
+      config,
       templateId = "csr_reset_password_email",
       subject = Subject("Your reset password code"),
       body = Body(html.csrResetPasswordEmail.f, txt.csrResetPasswordEmail.f)
     ),
     FastTrackTemplate(
+      config,
       templateId = "csr_account_lockout",
       subject = Subject("Your account has been locked"),
       body = Body(html.csrLockoutEmail.f, txt.csrLockoutEmail.f)
     ),
     FastTrackTemplate(
+      config,
       templateId = "csr_app_submit_confirmation",
       subject = Subject("Your apprenticeship application has been submitted"),
       body = Body(html.csrAppSubmitted.f, txt.csrAppSubmitted.f)
     ),
     FastTrackTemplate(
+      config,
       templateId = "csr_app_online_test_invitation",
       subject = Subject("Online tests are now open"),
       body = Body(html.csrAppOnlineTestInvitation.f, txt.csrAppOnlineTestInvitation.f)
     ),
     FastTrackTemplate(
+      config,
       templateId = "csr_app_online_test_expired",
       subject = Subject("Time has run out for your online tests"),
       body = Body(html.csrAppOnlineTestExpired.f, txt.csrAppOnlineTestExpired.f)
     ),
     FastTrackTemplate(
+      config,
       templateId = "csr_app_online_test_failed",
       subject = Subject("Online test results"),
       body = Body(html.csrAppOnlineTestFailed.f, txt.csrAppOnlineTestFailed.f)
     ),
     FastTrackTemplate(
+      config,
       templateId = "csr_app_confirm_attendance",
       subject = Subject("You need to confirm your assessment date"),
       body = Body(html.csrAppConfirmAttendance.f, txt.csrAppConfirmAttendance.f)
     ),
     FastTrackTemplate(
+      config,
       templateId = "csr_app_confirm_attendance_reminder",
       subject = Subject("Last chance to confirm your assessment date"),
       body = Body(html.csrAssessmentConfirmationReminder.f, txt.csrAssessmentConfirmationReminder.f)
     ),
     FastTrackTemplate(
+      config,
       templateId = "csr_app_assessment_centre_expired",
       subject = Subject("Time has run out on your assessment centre invitation"),
       body = Body(html.csrAssessmentCentreExpired.f, txt.csrAssessmentCentreExpired.f)
     ),
     FastTrackTemplate(
+      config,
       templateId = "csr_app_assessment_centre_passed",
       subject = Subject("Assessment centre results"),
       body = Body(html.csrAssessmentCentrePassed.f, txt.csrAssessmentCentrePassed.f)
     ),
     FastTrackTemplate(
+      config,
       templateId = "csr_app_assessment_centre_failed",
       subject = Subject("Assessment centre results"),
       body = Body(html.csrAssessmentCentreFailed.f, txt.csrAssessmentCentreFailed.f)
     ),
     FastTrackTemplate(
+      config,
       templateId = "fset_fasttrack_registration_email",
       subject = Subject("Your activation code"),
       body = Body(html.csrRegistrationEmail.f, txt.csrRegistrationEmail.f)
     ),
     FastTrackTemplate(
+      config,
       templateId = "fset_fasttrack_registration_activated_no_password_email",
       subject = Subject("New account has been created"),
       body = Body(html.csrRegistrationActivatedNoPasswordEmail.f, txt.csrRegistrationActivatedNoPasswordEmail.f)
     ),
     FastTrackTemplate(
+      config,
       templateId = "fset_fasttrack_reset_password_email",
       subject = Subject("Your reset password code"),
       body = Body(html.csrResetPasswordEmail.f, txt.csrResetPasswordEmail.f)
     ),
     FastTrackTemplate(
+      config,
       templateId = "fset_fasttrack_account_lockout",
       subject = Subject("Your account has been locked"),
       body = Body(html.csrLockoutEmail.f, txt.csrLockoutEmail.f)
     ),
     FastTrackTemplate(
+      config,
       templateId = "fset_fasttrack_account_email_changed_sent_to_old_address",
       subject = Subject("Your email address has been changed"),
       body = Body(html.csrEmailChangedSentToOldAddress.f, txt.csrEmailChangedSentToOldAddress.f)
     ),
     FastTrackTemplate(
+      config,
       templateId = "fset_fasttrack_assessor_email_changed_sent_to_new_address",
       subject = Subject("Your email address has been changed"),
       body = Body(html.csrEmailChangedSentToNewAddress.f, txt.csrEmailChangedSentToNewAddress.f)
     ),
     FastTrackTemplate(
+      config,
       templateId = "fset_fasttrack_app_submit_confirmation",
       subject = Subject("Your apprenticeship application has been submitted"),
       body = Body(html.csrAppSubmitted.f, txt.csrAppSubmitted.f)
     ),
     FastTrackTemplate(
+      config,
       templateId = "fset_fasttrack_app_online_test_invitation",
       subject = Subject("Online tests are now open"),
       body = Body(html.csrAppOnlineTestInvitation.f, txt.csrAppOnlineTestInvitation.f)
     ),
     FastTrackTemplate(
+      config,
       templateId = "fset_fasttrack_app_online_test_expired",
       subject = Subject("Time has run out for your online tests"),
       body = Body(html.csrAppOnlineTestExpired.f, txt.csrAppOnlineTestExpired.f)
     ),
     FastTrackTemplate(
+      config,
       templateId = "fset_fasttrack_app_online_test_failed",
       subject = Subject("Online test results"),
       body = Body(html.csrAppOnlineTestFailed.f, txt.csrAppOnlineTestFailed.f)
     ),
     FastTrackTemplate(
+      config,
       templateId = "fset_fasttrack_app_confirm_attendance",
       subject = Subject("You need to confirm your assessment date"),
       body = Body(html.csrAppConfirmAttendance.f, txt.csrAppConfirmAttendance.f)
     ),
     FastTrackTemplate(
+      config,
       templateId = "fset_fasttrack_app_confirm_attendance_reminder",
       subject = Subject("Last chance to confirm your assessment date"),
       body = Body(html.csrAssessmentConfirmationReminder.f, txt.csrAssessmentConfirmationReminder.f)
     ),
     FastTrackTemplate(
+      config,
       templateId = "fset_fasttrack_app_assessment_centre_passed",
       subject = Subject("Assessment centre results"),
       body = Body(html.csrAssessmentCentrePassed.f, txt.csrAssessmentCentrePassed.f)
     ),
     FastTrackTemplate(
+      config,
       templateId = "fset_fasttrack_app_assessment_centre_failed",
       subject = Subject("Assessment centre results"),
       body = Body(html.csrAssessmentCentreFailed.f, txt.csrAssessmentCentreFailed.f)
     ),
     FastTrackTemplate(
+      config,
       templateId = "fset_fasttrack_app_online_test_reminder_3_day",
       subject = Subject("You need to finish your online exercises"),
       body = Body(html.csrAppOnlineTestReminderThreeDay.f, txt.csrAppOnlineTestReminderThreeDay.f)
     ),
     FastTrackTemplate(
+      config,
       templateId = "fset_fasttrack_app_online_test_reminder_1_day",
       subject = Subject("URGENT: You need to finish your online exercises"),
       body = Body(html.csrAppOnlineTestReminderOneDay.f, txt.csrAppOnlineTestReminderOneDay.f)
     ),
     FastTrackTemplate(
+      config,
       templateId = "fset_fasttrack_adjustments_confirmation",
       subject = Subject("We've confirmed your adjustments"),
       body = Body(html.csrAdjustmentsConfirmed.f, txt.csrAdjustmentsConfirmed.f)
     ),
     FastTrackTemplate(
+      config,
       templateId = "fset_fasttrack_adjustments_changed",
       subject = Subject("Your adjustments have been updated"),
       body = Body(html.csrAdjustmentsChanged.f, txt.csrAdjustmentsChanged.f)
     ),
     FastTrackTemplate(
+      config,
       templateId = "fset_fasttrack_app_withdrawn_by_service_team",
       subject = Subject("Your application has been withdrawn"),
       body = Body(html.fsetFasttrackAppWithdrawnByServiceTeam.f, txt.fsetFasttrackAppWithdrawnByServiceTeam.f)
     )
   )
+  // scalastyle:on method.length
 }

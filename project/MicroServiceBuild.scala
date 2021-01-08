@@ -13,10 +13,11 @@ object MicroServiceBuild extends Build with MicroService {
 private object AppDependencies {
   def apply()= Seq(
     ws,
-    "uk.gov.hmrc"             %% "microservice-bootstrap"    % "10.9.0",
-    "uk.gov.hmrc"             %% "domain"                    % "5.3.0",
-    "uk.gov.hmrc"             %% "hmrctest"                  % "3.3.0" % "test,it",
-    "com.typesafe.play"       %% "play-test"                 % PlayVersion.current % "test,it",
-    "org.scalatestplus.play"  %% "scalatestplus-play"        % "2.0.1" % "test,it"
+    "uk.gov.hmrc"             %% "bootstrap-backend-play-26"    % "2.25.0",
+    "uk.gov.hmrc"             %% "domain"                       % "5.10.0-play-26",
+    "org.mockito"             %  "mockito-all"                  % "1.10.19" % "test",
+    "uk.gov.hmrc"             %% "hmrctest"                     % "3.3.0" % "test,it",
+    "com.typesafe.play"       %% "play-test"                    % PlayVersion.current % "test,it",
+    "org.scalatestplus.play"  %% "scalatestplus-play"           % "3.1.3"       % "test,it"
   )
 }
