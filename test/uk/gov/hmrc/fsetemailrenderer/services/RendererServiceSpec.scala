@@ -19,9 +19,6 @@ package uk.gov.hmrc.fsetemailrenderer.services
 import org.scalatest.concurrent.ScalaFutures
 import org.scalatestplus.mockito.MockitoSugar
 import org.scalatestplus.play.PlaySpec
-import play.api.i18n.MessagesApi
-import play.api.mvc.Results
-import play.api.test.Helpers.stubControllerComponents
 import play.api.{Configuration, Environment}
 import uk.gov.hmrc.fsetemailrenderer.MicroserviceAppConfig
 import uk.gov.hmrc.fsetemailrenderer.controllers.model.Params
@@ -35,47 +32,50 @@ class RendererServiceSpec extends PlaySpec with MockitoSugar with ScalaFutures w
   val mockEnvironment = mock[Environment]
   val mockConfig = new MicroserviceAppConfig(mockConfiguration, mockEnvironment) {
     override lazy val fastStreamInjectedParameters: Map[String, String]
-    = Map("adminSigninUrl" -> "adminSigninUrl-REPLACE-ME",
-    "externalSigninUrl"-> "externalSigninUrl-REPLACE-ME",
-    "candidateSigninUrl" -> "candidateSigninUrl-REPLACE-ME",
-      "fromAddress"-> "RmFzdCBTdHJlYW0gdGVhbSA8bm9yZXBseUBjc3IudnRkZXYudWs+",
-    "staticAssetUrlPrefix"-> "http://localhost:9032",
-    "staticAssetVersion"-> "/assets/2.230.0",
-    "borderColour"-> "#005EA5")
-
-    override lazy val fastTrackInjectedParameters: Map[String, String]
-    = Map("adminSigninUrl" -> "adminSigninUrl-REPLACE-ME",
+    = Map(
+      "adminSigninUrl" -> "adminSigninUrl-REPLACE-ME",
       "externalSigninUrl"-> "externalSigninUrl-REPLACE-ME",
       "candidateSigninUrl" -> "candidateSigninUrl-REPLACE-ME",
       "fromAddress"-> "RmFzdCBTdHJlYW0gdGVhbSA8bm9yZXBseUBjc3IudnRkZXYudWs+",
       "staticAssetUrlPrefix"-> "http://localhost:9032",
       "staticAssetVersion"-> "/assets/2.230.0",
-      "borderColour"-> "#005EA5")
-  }
+      "borderColour"-> "#005EA5"
+    )
 
+    override lazy val fastTrackInjectedParameters: Map[String, String]
+    = Map(
+      "adminSigninUrl" -> "adminSigninUrl-REPLACE-ME",
+      "externalSigninUrl"-> "externalSigninUrl-REPLACE-ME",
+      "candidateSigninUrl" -> "candidateSigninUrl-REPLACE-ME",
+      "fromAddress"-> "RmFzdCBTdHJlYW0gdGVhbSA8bm9yZXBseUBjc3IudnRkZXYudWs+",
+      "staticAssetUrlPrefix"-> "http://localhost:9032",
+      "staticAssetVersion"-> "/assets/2.230.0",
+      "borderColour"-> "#005EA5"
+    )
+  }
 
   val service = new RendererService(mockConfig)
 
   "Render service" must {
     "render a template" in {
-
-      val params = Params(Map("name" -> "Dr. Bruce Banner", "activationCode" -> "AABBCC", "programme" -> "fasttrack"))
-      val actual = service.render("fset_fasttrack_registration_email", params).futureValue
+      val params = Params(Map("name" -> "Dr. Bruce Banner", "activationCode" -> "AABBCC", "programme" -> "faststream"))
+      val actual = service.render("fset_faststream_registration_email", params).futureValue
 
       actual mustBe a[RenderResult]
     }
+
     "throw an exception if the programme is not found" in {
       val params = Params(Map("name" -> "Dr. Bruce Banner", "activationCode" -> "AABBCC"))
-      val actual = service.render("fset_fasttrack_registration_email", params).failed.futureValue
+      val actual = service.render("fset_faststream_registration_email", params).failed.futureValue
 
       actual mustBe RenderTemplateError("key not found: programme")
     }
 
     "throw an exception if the template is not found" in {
-      val params = Params(Map("name" -> "Dr. Bruce Banner", "activationCode" -> "AABBCC", "programme" -> "fasttrack"))
-      val actual = service.render("some random template", params).failed.futureValue
+      val params = Params(Map("name" -> "Dr. Bruce Banner", "activationCode" -> "AABBCC", "programme" -> "faststream"))
+      val actual = service.render("Incorrect template name", params).failed.futureValue
 
-      actual mustBe NoTemplateFoundError("some random template")
+      actual mustBe NoTemplateFoundError("Incorrect template name")
     }
 
     "render valid email for each template" in {
@@ -88,7 +88,7 @@ class RendererServiceSpec extends PlaySpec with MockitoSugar with ScalaFutures w
         "eventType" -> "FSAC", "eventVenue" -> "London, Bush House", "htmlBody" -> "<ul><li>Event 1</li></ul>",
         "txtBody" -> "Event 1", "scheme" -> "GORC"))
 
-      val accost = s"Dear ${allParams.parameters("name")}"
+      val greeting = s"Dear ${allParams.parameters("name")}"
 
       FastStreamTemplateGroup.templates(mockConfig).foreach(t => {
         val res = service.render(t.templateId, allParams).futureValue
@@ -97,8 +97,8 @@ class RendererServiceSpec extends PlaySpec with MockitoSugar with ScalaFutures w
           case rr: RenderResult =>
             rr.subject mustBe t.subject.text
             rr.html must include(htmlEncode(t.subject.text))
-            rr.html must include(accost)
-            rr.plain must include(accost)
+            rr.html must include(greeting)
+            rr.plain must include(greeting)
         }
       })
     }
@@ -108,5 +108,4 @@ class RendererServiceSpec extends PlaySpec with MockitoSugar with ScalaFutures w
     case '\'' => "&#x27;"
     case z => z
   }.mkString("")
-
 }
