@@ -17,9 +17,8 @@
 package uk.gov.hmrc.fsetemailrenderer.domain
 
 import java.nio.charset.StandardCharsets
-
 import play.api.libs.json.{JsValue, Json, Writes}
-import play.shaded.ahc.org.asynchttpclient.util.Base64
+import java.util.Base64
 import uk.gov.hmrc.fsetemailrenderer.domain.MessagePriority.MessagePriority
 
 case class RenderResult(plain: String,
@@ -27,11 +26,14 @@ case class RenderResult(plain: String,
                         fromAddress: String,
                         subject: String,
                         service: String,
-                        priority: MessagePriority)
+                        priority: MessagePriority) {
+  override def toString = s"plain=$plain,html=$html,fromAddress=$fromAddress," +
+    s"subject=$subject,service=$service,priority=$priority"
+}
 
-object RenderResult{
+object RenderResult {
 
-  private def base64Encoded(value: String) = Base64.encode(value.getBytes(StandardCharsets.UTF_8))
+  private def base64Encoded(value: String) = Base64.getEncoder.encodeToString(value.getBytes(StandardCharsets.UTF_8))
 
   implicit val writes = new Writes[RenderResult] {
     override def writes(r: RenderResult): JsValue = Json.obj(
