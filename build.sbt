@@ -1,5 +1,5 @@
-import TestPhases._
 import sbt.Keys._
+import sbt.Tests.{Group, SubProcess}
 import sbt._
 import uk.gov.hmrc.DefaultBuildSettings.{addTestReportOption, defaultSettings, scalaSettings}
 import uk.gov.hmrc.sbtdistributables.SbtDistributablesPlugin
@@ -34,13 +34,21 @@ lazy val microservice = Project(appName, file("."))
   .settings(
     Keys.fork in IntegrationTest := true,
     javaOptions in IntegrationTest += "-Dlogger.resource=logback-test.xml",
-    unmanagedSourceDirectories in IntegrationTest <<= (baseDirectory in IntegrationTest)(base => Seq(base / "it")),
+    unmanagedSourceDirectories in IntegrationTest := Seq((baseDirectory in IntegrationTest).value / "it"),
     addTestReportOption(IntegrationTest, "int-test-reports"),
     testGrouping in IntegrationTest := oneForkedJvmPerTest((definedTests in IntegrationTest).value),
-    parallelExecution in IntegrationTest := false)
-  .settings(compileScalastyle := org.scalastyle.sbt.ScalastylePlugin.scalastyle.in(Compile).toTask("").value,
-    (compile in Compile) <<= (compile in Compile) dependsOn compileScalastyle)
+    parallelExecution in IntegrationTest := false
+  )
+  .settings(compileScalastyle := scalastyle.in(Compile).toTask("").value,
+    (compile in Compile) := ((compile in Compile) dependsOn compileScalastyle).value
+  )
   .settings(
     resolvers += Resolver.bintrayRepo("hmrc", "releases"),
     resolvers += Resolver.jcenterRepo
   )
+
+def oneForkedJvmPerTest(tests: Seq[TestDefinition]): Seq[Group] =
+  tests map { test =>
+    val forkOptions = ForkOptions().withRunJVMOptions(Vector("-Dtest.name=" + test.name))
+    Group(test.name, Seq(test), SubProcess(config = forkOptions))
+  }
