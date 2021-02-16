@@ -19,14 +19,14 @@ package uk.gov.hmrc.fsetemailrenderer.services
 import org.scalatest.concurrent.ScalaFutures
 import org.scalatestplus.mockito.MockitoSugar
 import org.scalatestplus.play.PlaySpec
+import org.scalatestplus.play.guice.GuiceOneServerPerTest
 import play.api.{Configuration, Environment}
 import uk.gov.hmrc.fsetemailrenderer.MicroserviceAppConfig
 import uk.gov.hmrc.fsetemailrenderer.controllers.model.Params
 import uk.gov.hmrc.fsetemailrenderer.domain.{NoTemplateFoundError, RenderResult, RenderTemplateError}
 import uk.gov.hmrc.fsetemailrenderer.templates.faststream.FastStreamTemplateGroup
-import uk.gov.hmrc.play.test.WithFakeApplication
 
-class RendererServiceSpec extends PlaySpec with MockitoSugar with ScalaFutures with WithFakeApplication {
+class RendererServiceSpec extends PlaySpec with MockitoSugar with ScalaFutures with GuiceOneServerPerTest {
 
   val mockConfiguration = mock[Configuration]
   val mockEnvironment = mock[Environment]
