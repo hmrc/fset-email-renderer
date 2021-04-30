@@ -39,6 +39,6 @@ class WSHttp @Inject() (
     with WSDelete
     with HttpPatch with WSPatch with HttpHooks {
   override val hooks = NoneRequired
-  override lazy val configuration: Option[Config] = Option(application.configuration.underlying)
+  override lazy val configuration: Config = application.configuration.underlying
   override lazy val actorSystem: ActorSystem = application.actorSystem
 }
