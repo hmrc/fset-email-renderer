@@ -14,7 +14,7 @@ What you need: Read your event guide @{params.parameters("eventGuideUrl")}
 
 Please confirm by 11:59pm on @{params.parameters("deadlineDate")} or you'll lose your booking.
 
-You need to sign in to see where your assessment will be held and to confirm you can attend (@params.parameters("candidateSigninUrl"))
+You need to sign in to confirm you can attend your assessment (@params.parameters("candidateSigninUrl"))
 
 If you cannot attend on this date, please email us at faststream.applicationsupport@@cabinetoffice.gov.uk. We may be able to reschedule your assessment.
 
