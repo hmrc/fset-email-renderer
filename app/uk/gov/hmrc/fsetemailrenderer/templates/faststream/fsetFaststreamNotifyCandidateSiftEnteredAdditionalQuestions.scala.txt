@@ -4,7 +4,9 @@ Congratulations. You're through to the next stage.
 
 At least one of your scheme preferences requires you to answer some additional questions.This may include a numerical test.
 
-Your additional questions, which may include a numerical test, will expire in 7 days. You must complete all the additional questions before they expire.
+Your additional questions, which may include a numerical test, will expire on @{params.parameters("expireDateTime")}
+
+You must complete all the additional questions before they expire.
 
 You can withdraw from any of your scheme preferences at this stage.
 
