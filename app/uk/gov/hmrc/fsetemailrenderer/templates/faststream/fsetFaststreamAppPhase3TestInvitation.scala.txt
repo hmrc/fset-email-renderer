@@ -8,6 +8,8 @@ Access to the video interview will expire on @{params.parameters("expireDateTime
 You must finish the video interview before it expires.
 The answers that you give are timed.
 
+Please note the video interview does not support Safari. Please use an alternative internet browser.
+
 Sign in to your home page to start the video interview.
 (https://www.apply-civil-service-fast-stream.service.gov.uk/fset-fast-stream/signin)
 
