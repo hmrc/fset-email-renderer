@@ -43,7 +43,6 @@ lazy val microservice = Project(appName, file("."))
     (compile in Compile) := ((compile in Compile) dependsOn compileScalastyle).value
   )
   .settings(
-    resolvers += Resolver.bintrayRepo("hmrc", "releases"),
     resolvers += Resolver.jcenterRepo
   )
 
