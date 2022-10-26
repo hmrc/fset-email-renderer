@@ -1,6 +1,6 @@
 package uk.gov.hmrc.fsetemailrenderer
 
-import org.scalatest.words.EmptyWord
+import org.scalatest.matchers.dsl.EmptyWord
 import org.scalatestplus.play.guice.GuiceOneServerPerSuite
 import org.scalatestplus.play.{PlaySpec, WsScalaTestClient}
 import play.api.http.Status
