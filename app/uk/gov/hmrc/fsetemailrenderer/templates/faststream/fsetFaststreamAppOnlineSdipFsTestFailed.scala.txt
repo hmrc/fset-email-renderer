@@ -1,6 +1,6 @@
 @(params: uk.gov.hmrc.fsetemailrenderer.controllers.model.Params)@if(params.parameters("name").toString.trim.nonEmpty){Dear @{params.parameters("name")}}
 
-We've assessed your results for the Summer Diversity Internship Programme (SDIP) online tests.
+We've assessed your results for the Summer Internship Programme (SIP) online tests.
 
 You need to sign back in to view your results
 
