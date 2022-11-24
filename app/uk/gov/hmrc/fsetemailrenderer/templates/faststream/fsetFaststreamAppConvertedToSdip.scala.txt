@@ -1,6 +1,6 @@
 @(params: uk.gov.hmrc.fsetemailrenderer.controllers.model.Params)@if(params.parameters("name").toString.trim.nonEmpty){Dear @{params.parameters("name")}}
 
-You've successfully submitted your application to be considered for SDIP.
+You've successfully submitted your application to be considered for SIP.
 
 If you haven't finished your online exercises, please make sure you do so before they expire.
 

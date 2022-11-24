@@ -208,7 +208,7 @@ object FastStreamTemplateGroup {
     FastStreamTemplate(
       config,
       templateId = "fset_faststream_app_converted_to_sdip_confirmation",
-      subject = Subject("We'll consider you for SDIP"),
+      subject = Subject("We'll consider you for SIP"),
       body = Body(html.fsetFaststreamAppConvertedToSdip.f, txt.fsetFaststreamAppConvertedToSdip.f)
     ),
     FastStreamTemplate(
