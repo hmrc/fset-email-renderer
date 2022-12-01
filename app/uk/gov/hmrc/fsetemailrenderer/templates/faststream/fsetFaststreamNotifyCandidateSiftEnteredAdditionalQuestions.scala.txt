@@ -2,9 +2,9 @@
 
 Congratulations. You're through to the next stage.
 
-At least one of your scheme preferences requires you to answer some additional questions.This may include a numerical test.
+At least one of your scheme preferences requires you to answer some additional questions.
 
-Your additional questions, which may include a numerical test, will expire on @{params.parameters("expireDateTime")}
+Your additional questions will expire on @{params.parameters("expireDateTime")}
 
 You must complete all the additional questions before they expire.
 
