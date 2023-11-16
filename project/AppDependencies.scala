@@ -5,7 +5,7 @@ import play.sbt.PlayImport._
 object AppDependencies {
   def apply()= Seq(
     ws,
-    "uk.gov.hmrc"             %% "bootstrap-backend-play-28"    % "7.21.0",
+    "uk.gov.hmrc"             %% "bootstrap-backend-play-28"    % "7.23.0",
     "uk.gov.hmrc"             %% "domain"                       % "8.3.0-play-28",
     "org.mockito"             %  "mockito-core"                 % "3.9.0"             % Test,
     "org.scalatestplus.play"  %% "scalatestplus-play"           % "5.1.0"             % "test,it",

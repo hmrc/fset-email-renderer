@@ -67,6 +67,7 @@
     <logger name="akka.stream.impl.io" level="INFO"/>
     <logger name="net.sf.ehcache" level="INFO"/>
     <logger name="akka.event.slf4j.Slf4jLogger" level="WARN"/>
+    <logger name="akka.serialization.jackson" level="INFO"/>
     <logger name="play.api.libs.concurrent.ActorSystemProvider" level="INFO"/>
     <logger name="play.core.netty.utils.ServerCookieDecoder" level="INFO"/>
 
