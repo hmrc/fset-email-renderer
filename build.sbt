@@ -4,7 +4,6 @@ import sbt.Tests.{Group, SubProcess}
 import sbt._
 import uk.gov.hmrc.DefaultBuildSettings.{addTestReportOption, defaultSettings, scalaSettings}
 import uk.gov.hmrc.sbtdistributables.SbtDistributablesPlugin
-import uk.gov.hmrc.sbtdistributables.SbtDistributablesPlugin._
 import uk.gov.hmrc.versioning.SbtGitVersioning
 import uk.gov.hmrc.versioning.SbtGitVersioning.autoImport.majorVersion
 import uk.gov.hmrc.SbtAutoBuildPlugin
@@ -22,7 +21,6 @@ lazy val microservice = Project(appName, file("."))
   .settings(majorVersion := 0)
   .settings(playSettings : _*)
   .settings(scalaSettings: _*)
-  .settings(publishingSettings: _*)
   .settings(defaultSettings(): _*)
   .settings(playDefaultPort := 8960)
   .settings(

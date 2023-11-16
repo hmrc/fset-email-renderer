@@ -5,25 +5,12 @@ Congratulations, you've successfully passed all the required stages.
 We're delighted to be able to offer you a role on the Civil Service Fast Stream, for your chosen scheme/internship:
 @{params.parameters("scheme")}
 
-You'll be contacted by your scheme's recruitment team soon, with further details of the offer.
+You'll be contacted by the Fast Stream recruitment team in January 2024, with further details of the offer.
 
-We advise that you do not resign from any employment at this stage (Not applicable for SIP), as you will need to pass pre-employment checks.
+In the meantime, we advise that you do not contact us, as we will be extremely busy with the on-going campaign, and/or resign from any employment at this stage (Not applicable for SIP), as you will need to pass pre-employment checks.
 
-Please don't worry if you're not contacted immediately, we are extremely busy at the moment and we will be in touch shortly.
-
-Next steps for all schemes:
-
-To enable you to prepare for your pre-employment checks please read the guidance below. This provides information as to the documentation required. We recommend you review the guidance and begin gathering the relevant documents:
-
-https://www.faststream.gov.uk/media/pre-employment-check-candidate-guidance.pdf
-
-Sign in to your homepage at any time
-(https://www.apply-civil-service-fast-stream.service.gov.uk/fset-fast-stream/signin)
+We will be back in touch in the new year.
 
 Thank you
 
 Fast Stream team
-
-If you need more help, email us at faststream.applicationsupport@@cabinetoffice.gov.uk.
-
-Do not reply to this email.
