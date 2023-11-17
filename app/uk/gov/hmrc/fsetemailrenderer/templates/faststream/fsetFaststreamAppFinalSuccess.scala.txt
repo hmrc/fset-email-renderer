@@ -5,12 +5,10 @@ Congratulations, you've successfully passed all the required stages.
 We're delighted to be able to offer you a role on the Civil Service Fast Stream, for your chosen scheme/internship:
 @{params.parameters("scheme")}
 
-You'll be contacted by the Fast Stream recruitment team in January 2024, with further details of the offer.
+You'll be contacted by the Fast Stream Onboarding Team with your Welcome Pack in due course.
 
-In the meantime, we advise that you do not contact us, as we will be extremely busy with the on-going campaign, and/or resign from any employment at this stage (Not applicable for SIP), as you will need to pass pre-employment checks.
+In the meantime, we advise that you do not contact us, as we will be extremely busy with the on-going campaign, and/or resign from any employment at this stage.
 
-We will be back in touch in the new year.
+Thank you,
 
-Thank you
-
-Fast Stream team
+Fast Stream Recruitment Team
