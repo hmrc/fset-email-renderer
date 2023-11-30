@@ -24,7 +24,7 @@ lazy val microservice = Project(appName, file("."))
   .settings(defaultSettings(): _*)
   .settings(playDefaultPort := 8960)
   .settings(
-    scalaVersion := "2.13.10",
+    scalaVersion := "2.13.12",
     libraryDependencies ++= appDependencies,
     retrieveManaged := true,
 //    evictionWarningOptions in update := EvictionWarningOptions.default.withWarnScalaVersionEviction(false)
