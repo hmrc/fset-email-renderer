@@ -25,7 +25,7 @@ class MicroserviceAppConfig @Inject() (
   val config: Configuration, val environment: Environment) {
 
   private def toMap(c: Option[Configuration]) = c.map {
-    _.entrySet.toMap.mapValues(_.unwrapped.toString)
+    _.entrySet.toMap.view.mapValues(_.unwrapped.toString)
   }.getOrElse(Map.empty[String, String])
 
   lazy val fastTrackInjectedParameters: Map[String, String] =

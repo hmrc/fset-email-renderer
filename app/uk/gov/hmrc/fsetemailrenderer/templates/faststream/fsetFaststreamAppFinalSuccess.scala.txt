@@ -5,7 +5,7 @@ Congratulations, you've successfully passed all the required stages.
 We're delighted to be able to offer you a role on the Civil Service Fast Stream, for your chosen scheme/internship:
 @{params.parameters("scheme")}
 
-You'll be contacted by the Fast Stream Onboarding Team with your Welcome Pack in due course.
+The relevant team will contact you in due course with the next steps.
 
 In the meantime, we advise that you do not contact us, as we will be extremely busy with the on-going campaign, and/or resign from any employment at this stage.
 
