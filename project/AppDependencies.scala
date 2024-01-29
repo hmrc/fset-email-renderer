@@ -3,9 +3,12 @@ import sbt._
 import play.sbt.PlayImport._
 
 object AppDependencies {
+
+  val bootstrapVersion = "8.1.0"
+
   def apply()= Seq(
     ws,
-    "uk.gov.hmrc"             %% "bootstrap-backend-play-30"    % "8.1.0",
+    "uk.gov.hmrc"             %% "bootstrap-backend-play-30"    % bootstrapVersion,
     "org.mockito"             %  "mockito-core"                 % "3.9.0"             % Test,
     "org.scalatestplus.play"  %% "scalatestplus-play"           % "5.1.0"             % "test,it",
     // Gives you access to MockitoSugar as it is no longer available in scalatestplus-play
