@@ -16,10 +16,10 @@
 
 package uk.gov.hmrc.fsetemailrenderer.controllers.model
 
-import play.api.libs.json.Json
+import play.api.libs.json.{Json, OFormat}
 
 case class Params(parameters: Map[String, String])
 
 object Params {
-  implicit val format = Json.format[Params]
+  implicit val format: OFormat[Params] = Json.format[Params]
 }

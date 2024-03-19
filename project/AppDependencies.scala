@@ -4,15 +4,11 @@ import play.sbt.PlayImport._
 
 object AppDependencies {
 
-  val bootstrapVersion = "8.1.0"
+  val bootstrapVersion = "8.5.0"
 
   def apply()= Seq(
     ws,
-    "uk.gov.hmrc"             %% "bootstrap-backend-play-30"    % bootstrapVersion,
-    "org.mockito"             %  "mockito-core"                 % "3.9.0"             % Test,
-    "org.scalatestplus.play"  %% "scalatestplus-play"           % "5.1.0"             % "test,it",
-    // Gives you access to MockitoSugar as it is no longer available in scalatestplus-play
-    "org.scalatestplus"       %% "mockito-3-4"                  % "3.2.8.0"           % Test,
-    "com.vladsch.flexmark"    %  "flexmark-all"                 % "0.36.8"            % "test,it"
+    "uk.gov.hmrc"   %% "bootstrap-backend-play-30"  % bootstrapVersion,
+    "uk.gov.hmrc"   %% "bootstrap-test-play-30"     % bootstrapVersion    % "test,it"
   )
 }

@@ -35,7 +35,7 @@ object RenderResult {
 
   private def base64Encoded(value: String) = Base64.getEncoder.encodeToString(value.getBytes(StandardCharsets.UTF_8))
 
-  implicit val writes = new Writes[RenderResult] {
+  implicit val writes: Writes[RenderResult] = new Writes[RenderResult] {
     override def writes(r: RenderResult): JsValue = Json.obj(
       "plain"       -> base64Encoded(r.plain),
       "html"        -> base64Encoded(r.html),

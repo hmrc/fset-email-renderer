@@ -20,7 +20,6 @@ import java.util.Base64
 
 import uk.gov.hmrc.fsetemailrenderer.domain._
 import uk.gov.hmrc.fsetemailrenderer.MicroserviceAppConfig
-import uk.gov.hmrc.fsetemailrenderer.templates.faststream
 
 case class FastStreamTemplate(
   config: MicroserviceAppConfig,
@@ -35,7 +34,7 @@ case class FastStreamTemplate(
 
 object FastStreamTemplateGroup {
   // scalastyle:off method.length
-  def templates(config: MicroserviceAppConfig) = Seq(
+  def templates(config: MicroserviceAppConfig): Seq[FastStreamTemplate] = Seq(
     FastStreamTemplate(
       config,
       templateId = "fset_faststream_registration_email",
