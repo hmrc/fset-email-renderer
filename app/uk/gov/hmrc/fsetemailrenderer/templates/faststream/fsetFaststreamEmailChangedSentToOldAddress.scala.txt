@@ -3,8 +3,7 @@
 
 The email address for your account has been changed to @{params.parameters("newEmail")}
 You need to sign in with your new email address
-If you think there's been a mistake, email us at faststream.applicationsupport@@cabinetoffice.gov.uk.
-
+If you think there's been a mistake, contact us at https://fsetatso.freshdesk.com/support/home
 
 Thank you
 
