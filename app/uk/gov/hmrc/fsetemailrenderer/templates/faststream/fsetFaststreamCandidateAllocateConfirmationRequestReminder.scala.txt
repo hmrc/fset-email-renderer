@@ -16,7 +16,7 @@ Please confirm by 11:59pm on @{params.parameters("deadlineDate")} or you'll lose
 
 You need to sign in to confirm you can attend your assessment (@params.parameters("candidateSigninUrl"))
 
-If you cannot attend on this date, please email us at faststream.applicationsupport@@cabinetoffice.gov.uk. We may be able to reschedule your assessment.
+If you cannot attend on this date, please contact us at https://fsetatso.freshdesk.com/support/home. We may be able to reschedule your assessment.
 
 If you no longer wish to continue, please sign in and withdraw your application. We'll then stop sending any further emails.
 
