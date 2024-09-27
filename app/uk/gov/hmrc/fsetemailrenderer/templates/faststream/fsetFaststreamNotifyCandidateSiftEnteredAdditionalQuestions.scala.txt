@@ -10,9 +10,6 @@ You must complete all the additional questions before they expire.
 
 You can withdraw from any of your scheme preferences at this stage.
 
-You will not be able to withdraw from any scheme preference at a later stage.
-
-
 Sign in to continue
 (@params.parameters("candidateSigninUrl"))
 
