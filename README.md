@@ -65,7 +65,7 @@ cd $WORKSPACE/hmrc-email-renderer
 sbt -Dhttp.port=8960 -Dapplication.router=testOnlyDoNotUseInAppConf.Routes run
 ```
 
-You should be able to list all the templates available for preview from [http://localhost:8950/hmrc-email-renderer/test-only/preview](http://localhost:8960/hmrc-email-renderer/test-only/preview).
+You should be able to list all the templates available for preview from [http://localhost:8960/fset-email-renderer/test-only/preview](http://localhost:8960/fset-email-renderer/test-only/preview).
 
 Note that to render logos correctly the assets frontend also needs to be started using
 
@@ -73,7 +73,7 @@ Note that to render logos correctly the assets frontend also needs to be started
 sm --start ASSETS_FRONTEND -f
 ```
 
-**You must set `programme` in the query string, when using preview feature.**
+**You must set `programme` in the query string, when using preview feature eg. `programme=faststream`**
 
 You may also send template parameters in the query string as key=value pairs.
 
@@ -87,7 +87,7 @@ sm --start HMRC_EMAIL_RENDERER [-f|-r]
 
 Again, list the templates can then be previewed from
 
-[http://localhost:8950/hmrc-email-renderer/test-only/preview](http://localhost:8950/hmrc-email-renderer/test-only/preview)
+[http://localhost:8960/fset-email-renderer/test-only/preview](http://localhost:8960/fset-email-renderer/test-only/preview)
 
 ### License
 
