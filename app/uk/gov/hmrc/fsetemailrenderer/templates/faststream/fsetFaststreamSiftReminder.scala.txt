@@ -4,7 +4,7 @@ You have @{params.parameters("timeLeft")} @{params.parameters("timeUnit")} to an
 
 Your time will expire on @{params.parameters("expireDateTime")}
 
-You must complete your additional questions before they expire.
+You must answer your additional questions before they expire.
 
 You can withdraw from any of your scheme preferences.
 
