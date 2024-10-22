@@ -1,7 +1,5 @@
 @(params: uk.gov.hmrc.fsetemailrenderer.controllers.model.Params)@if(params.parameters("name").toString.trim.nonEmpty){Dear @{params.parameters("name")}}
 
-You have @{params.parameters("timeLeft")} @{params.parameters("timeUnit")} to finish your online exercises.
-
 Your online exercises will expire on @{params.parameters("expireDateTime")}
 
 You must finish the exercises before they expire

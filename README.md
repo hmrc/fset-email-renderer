@@ -61,7 +61,7 @@ Responds with status:
 Templates can be fiddly to get right as they can ordinarily only be viewed by actually generating an email and sending it. To work around this you can preview templates **during development** by running the micro-service from sbt:
 
 ```bash
-cd $WORKSPACE/hmrc-email-renderer
+cd $WORKSPACE/fset-email-renderer
 sbt -Dhttp.port=8960 -Dapplication.router=testOnlyDoNotUseInAppConf.Routes run
 ```
 
@@ -78,11 +78,11 @@ sm --start ASSETS_FRONTEND -f
 You may also send template parameters in the query string as key=value pairs.
 
 #### Quick Preview
-Alternatively, you can do a preview of emails by starting the service using `sm` to preview the source, snapshot or release versions of the micro-service.
+Alternatively, you can do a preview of emails by starting the service using `sm2` to preview the source, snapshot or release versions of the micro-service.
 
 ```bash
-sm --start ASSETS_FRONTEND -f
-sm --start HMRC_EMAIL_RENDERER [-f|-r]
+sm2 --start ASSETS_FRONTEND -f
+sm2 --start FSET_EMAIL_RENDERER [-f|-r]
 ```
 
 Again, list the templates can then be previewed from
