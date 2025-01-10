@@ -22,6 +22,7 @@ import org.scalatestplus.play.{PlaySpec, WsScalaTestClient}
 import play.api.http.Status
 import play.api.libs.json.Json
 import play.api.test.Helpers._
+import play.api.libs.ws.writeableOf_JsValue
 
 import java.nio.charset.StandardCharsets
 import java.util.Base64
