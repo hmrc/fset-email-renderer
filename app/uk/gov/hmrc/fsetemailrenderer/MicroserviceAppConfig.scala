@@ -17,8 +17,8 @@
 package uk.gov.hmrc.fsetemailrenderer
 
 import javax.inject.{Inject, Singleton}
-import net.ceedubs.ficus.Ficus._
 import play.api.{Configuration, Environment}
+import pureconfig._
 
 @Singleton
 class MicroserviceAppConfig @Inject() (
@@ -29,7 +29,7 @@ class MicroserviceAppConfig @Inject() (
   }.getOrElse(Map.empty[String, String])
 
   lazy val fastTrackInjectedParameters: Map[String, String] =
-    config.underlying.as[Map[String, String]]("microservice.fasttrack.injectedParameters")
+    ConfigSource.default.at("microservice.fasttrack.injectedParameters").loadOrThrow[Map[String, String]]
   lazy val fastStreamInjectedParameters: Map[String, String] =
-    config.underlying.as[Map[String, String]]("microservice.faststream.injectedParameters")
+    ConfigSource.default.at("microservice.faststream.injectedParameters").loadOrThrow[Map[String, String]]
 }

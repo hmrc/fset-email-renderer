@@ -16,23 +16,29 @@
 
 package uk.gov.hmrc.fsetemailrenderer.services
 
+import play.api.Logging
+
 import javax.inject.{Inject, Singleton}
 import uk.gov.hmrc.fsetemailrenderer.MicroserviceAppConfig
 import uk.gov.hmrc.fsetemailrenderer.controllers.model.Params
-import uk.gov.hmrc.fsetemailrenderer.domain._
+import uk.gov.hmrc.fsetemailrenderer.domain.*
 
 import scala.concurrent.Future
 import scala.util.Failure
 
 @Singleton
-class RendererService @Inject() (config: MicroserviceAppConfig) {
+class RendererService @Inject() (config: MicroserviceAppConfig) extends Logging {
 
   def templateLocator: TemplateLocator = TemplateLocator
 
-  private def getInjectedParameters(programme: String) = if (programme == "faststream") {
-    config.fastStreamInjectedParameters
-  } else {
-    config.fastTrackInjectedParameters
+  private def getInjectedParameters(programme: String) = {
+    val parameters = if (programme == "faststream") {
+      config.fastStreamInjectedParameters
+    } else {
+      config.fastTrackInjectedParameters
+    }
+//    logger.debug(s"Parameters read from config = $parameters")
+    parameters
   }
 
   def render(templateId: String, params: Params): Future[RenderResult] = Future.fromTry {

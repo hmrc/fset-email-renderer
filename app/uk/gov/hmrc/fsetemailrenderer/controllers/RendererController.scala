@@ -16,9 +16,11 @@
 
 package uk.gov.hmrc.fsetemailrenderer.controllers
 
+import play.api.Logging
+
 import javax.inject.{Inject, Singleton}
-import play.api.libs.json._
-import play.api.mvc._
+import play.api.libs.json.*
+import play.api.mvc.*
 import uk.gov.hmrc.fsetemailrenderer.controllers.model.Params
 import uk.gov.hmrc.fsetemailrenderer.domain.{NoTemplateFoundError, RenderTemplateError}
 import uk.gov.hmrc.fsetemailrenderer.services.RendererService
@@ -29,10 +31,11 @@ import scala.concurrent.ExecutionContext
 @Singleton
 class RendererController @Inject() (
   cc: ControllerComponents,
-  rendererService: RendererService)(implicit val ec: ExecutionContext) extends BackendController(cc) {
+  rendererService: RendererService)(implicit val ec: ExecutionContext) extends BackendController(cc) with Logging {
 
   def render(templateId: String): Action[JsValue] = Action.async(parse.json) { implicit request =>
-      withJsonBody[Params] { params =>
+    withJsonBody[Params] { params =>
+      logger.debug(s"Request received: templateId=$templateId, params=$params")
 
       rendererService.render(templateId, params).map { renderResult =>
         Ok(Json.toJson(renderResult))

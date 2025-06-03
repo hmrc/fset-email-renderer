@@ -12,7 +12,7 @@ lazy val playSettings : Seq[Setting[?]] = Seq.empty
 
 lazy val compileScalastyle = taskKey[Unit]("compileScalastyle")
 
-ThisBuild / scalaVersion := "2.13.12"
+ThisBuild / scalaVersion := "3.3.6"
 ThisBuild / majorVersion := 0
 
 lazy val microservice = Project(appName, file("."))
@@ -28,9 +28,6 @@ lazy val microservice = Project(appName, file("."))
   )
   .settings(compileScalastyle := (Compile / scalastyle).toTask("").value,
     (Compile / compile) := ((Compile / compile) dependsOn compileScalastyle).value
-  )
-  .settings(
-    resolvers += Resolver.jcenterRepo
   )
 
 lazy val it = (project in file("it"))
