@@ -86,6 +86,18 @@ object FastStreamTemplateGroup {
     ),
     FastStreamTemplate(
       config,
+      templateId = "fset_faststream_app_submit_check_failed",
+      subject = Subject("We've assessed your application"),
+      body = Body(html.fsetFaststreamAppPostSubmittedCheckFailed.f, txt.fsetFaststreamAppPostSubmittedCheckFailed.f)
+    ),
+    FastStreamTemplate(
+      config,
+      templateId = "fset_faststream_app_submit_check_passed",
+      subject = Subject("You've successfully submitted your application"),
+      body = Body(html.fsetFaststreamAppPostSubmittedCheckPassed.f, txt.fsetFaststreamAppPostSubmittedCheckPassed.f)
+    ),
+    FastStreamTemplate(
+      config,
       templateId = "fset_faststream_app_online_test_invitation",
       subject = Subject("You can start your online exercises now"),
       body = Body(html.fsetFaststreamAppOnlineTestInvitation.f, txt.fsetFaststreamAppOnlineTestInvitation.f)

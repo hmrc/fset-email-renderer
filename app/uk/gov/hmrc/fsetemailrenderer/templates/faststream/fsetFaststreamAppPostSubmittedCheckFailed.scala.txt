@@ -1,0 +1,12 @@
+@(params: uk.gov.hmrc.fsetemailrenderer.controllers.model.Params)@if(params.parameters("name").toString.trim.nonEmpty){Dear @{params.parameters("name")}}
+
+We've assessed your SEB (socio-economic background) score and unfortunately, you've been unsuccessful this time.
+
+Thank you
+
+Fast Stream team
+
+If you need more help, contact us at https://fsetatso.freshdesk.com/support/home
+
+Do not reply to this email.
+
