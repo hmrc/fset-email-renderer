@@ -4,7 +4,7 @@ import play.sbt.PlayImport._
 
 object AppDependencies {
 
-  val bootstrapVersion = "9.13.0"
+  val bootstrapVersion = "9.17.0"
 
   def apply()= Seq(
     ws,
