@@ -1,8 +1,6 @@
 @(params: uk.gov.hmrc.fsetemailrenderer.controllers.model.Params)@if(params.parameters("name").toString.trim.nonEmpty){Dear @{params.parameters("name")}}
 
-You have @{params.parameters("timeLeft")} @{params.parameters("timeUnit")} to answer the additional questions.
-
-Your time will expire on @{params.parameters("expireDateTime")}
+Your additional questions will expire on @{params.parameters("expireDateTime")}
 
 You must answer your additional questions before they expire.
 
