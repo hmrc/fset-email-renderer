@@ -1,19 +1,23 @@
 @(params: uk.gov.hmrc.fsetemailrenderer.controllers.model.Params)@if(params.parameters("name").toString.trim.nonEmpty){Dear @{params.parameters("name")}}
 
-Dear Candidate,
+Thank you for your interest in the Civil Service Summer Internship Programme (SIP).
 
-Thank you for your application to participate in the Summer Internship Programme 2026.
+We have received your application for SIP, but unfortunately we cannot progress your application further as it does not meet the scheme eligibility requirements.
 
-Unfortunately on this occasion we will not be progressing your application.
+SIP is only open to candidates who are in their final two years of university from a lower socio-economic background. We assess socio-economic background using the measures set out by the Office for National Statistics - https://www.ons.gov.uk/.
 
-The answers you provided to the Socio-Economic Background Diversity questions as part of your application have been assessed and, based on your responses, you do not meet the eligibility criteria for the Summer Internship Programmes based on the Office for National Statistics definition of lower socio-economic background.
+If you are still interested in a career in the Civil Service, we would encourage you to look at the following:
 
-The Summer Internship Programme is open to candidates from a lower socio-economic background, who are in their final two years of university. The aim is to improve access to employment opportunities within the civil service by targeting candidates with a lower socio economic background. More information can be found here: https://www.civil-service-careers.gov.uk/fast-stream/fs-summer-internship-programme/
+Civil Service Jobs - https://www.civilservicejobs.service.gov.uk/
+Civil Service careers website - https://www.civil-service-careers.gov.uk/
+Care leavers internship scheme - https://www.civil-service-careers.gov.uk/civil-service-care-leavers-internship-scheme/
+Civil Service Fast Stream - https://www.civil-service-careers.gov.uk/fast-stream/
+Going forward into Employment (GFIE) - https://www.civil-service-careers.gov.uk/about-gfie/
 
-If you would like to discuss anything else in relation to your application, please contact us at https://fsetatso.freshdesk.com/support/home.
+We wish you all the best in your future career steps.
 
-Thank you
+Fast Stream team
 
-Fast Stream Team.
+If you need more help, contact us at https://fsetatso.freshdesk.com/support/home
 
 Do not reply to this email.
