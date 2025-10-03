@@ -15,18 +15,26 @@
  *@
 
 @(params: uk.gov.hmrc.fsetemailrenderer.controllers.model.Params)@uk.gov.hmrc.fsetemailrenderer.templates.helpers.html.template_csr(params, "We've assessed your application") {
-  @if(params.parameters("name").toString.trim.nonEmpty){
-    <p style="font-size: 19px; line-height: 1.315789474; margin: 0 0 30px 0;">Dear @{params.parameters("name")}</p>
-    <br/>
-  }
+    @if(params.parameters("name").toString.trim.nonEmpty){
+        <p style="font-size: 19px; line-height: 1.315789474; margin: 0 0 30px 0;">Dear @{params.parameters("name")}</p>
+        <br/>
+    }
 
-    <p style="font-size: 19px; line-height: 1.315789474; margin: 0 0 30px 0;">Thank you for your application to participate in the Summer Internship Programme 2026.</p>
-    <p style="font-size: 19px; line-height: 1.315789474; margin: 0 0 30px 0;">Unfortunately on this occasion we will not be progressing your application.</p>
-    <p style="font-size: 19px; line-height: 1.315789474; margin: 0 0 30px 0;">The answers you provided to the Socio-Economic Background Diversity questions as part of your application have been assessed and, based on your responses, you do not meet the eligibility criteria for the Summer Internship Programmes based on the Office for National Statistics definition of lower socio-economic background.</p>
-    <p style="font-size: 19px; line-height: 1.315789474; margin: 0 0 30px 0;">The Summer Internship Programme is open to candidates from a lower socio-economic background, who are in their final two years of university. The aim is to improve access to employment opportunities within the civil service by targeting candidates with a lower socio economic background. More information can be found <a href="https://www.civil-service-careers.gov.uk/fast-stream/fs-summer-internship-programme/">here</a>.</p>
-    <p style="font-size: 19px; line-height: 1.315789474; margin: 0 0 30px 0;">If you would like to discuss anything else in relation to your application, please contact us <a href="https://fsetatso.freshdesk.com/support/home">here</a>.</p>
-    <p style="font-size: 19px; line-height: 1.315789474; margin: 0 0 30px 0;">Thank you</p>
+    <p style="font-size: 19px; line-height: 1.315789474; margin: 0 0 30px 0;">Thank you for your interest in the Civil Service Summer Internship Programme (SIP).</p>
+    <p style="font-size: 19px; line-height: 1.315789474; margin: 0 0 30px 0;">We have received your application for SIP, but unfortunately we cannot progress your application further as it does not meet the scheme eligibility requirements.</p>
+    <p style="font-size: 19px; line-height: 1.315789474; margin: 0 0 30px 0;">SIP is only open to candidates who are in their final two years of university from a lower socio-economic background. We assess socio-economic background using the measures set out by the <a href="https://www.ons.gov.uk">Office for National Statistics</a>.</p>
+    <p style="font-size: 19px; line-height: 1.315789474; margin: 0 0 30px 0;">If you are still interested in a career in the Civil Service, we would encourage you to look at the following:
+        <br/>
+        <a href="https://www.civilservicejobs.service.gov.uk/"><strong>Civil Service Jobs</strong></a>
+        <a href="https://www.civil-service-careers.gov.uk/"><strong>Civil Service careers website</strong></a>
+        <a href="https://www.civil-service-careers.gov.uk/civil-service-care-leavers-internship-scheme/"><strong>Care leavers internship scheme</strong></a>
+        <a href="https://www.civil-service-careers.gov.uk/fast-stream/"><strong>Civil Service Fast Stream</strong></a>
+        <a href="https://www.civil-service-careers.gov.uk/about-gfie/"><strong>Going forward into Employment (GFIE)</strong></a>
+    </p>
+
+    <p style="font-size: 19px; line-height: 1.315789474; margin: 0 0 30px 0;">We wish you all the best in your future career steps.</p>
     <p style="font-size: 19px; line-height: 1.315789474; margin: 0 0 30px 0;">Fast Stream team</p>
     <br/>
+    <p style="font-size: 19px; line-height: 1.315789474; margin: 0 0 30px 0;">If you need more help, contact us at <a href="https://fsetatso.freshdesk.com/support/home">https://fsetatso.freshdesk.com/support/home</a></p>
     <p style="font-size: 19px; line-height: 1.315789474; margin: 0 0 30px 0;">Do not reply to this email.</p>
 }
