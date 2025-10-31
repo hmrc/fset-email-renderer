@@ -4,7 +4,7 @@ Your online exercises are now ready for you to start.
 Your online exercises will expire on @{params.parameters("expireDateTime")}.
 You must finish the exercises before they expire.
 
-Please note you will not be able to access your online exercises on Sunday 1st November between 1am and 5am due to planned maintenance. Please consider this when planning when to take the online exercises.
+Please note you will not be able to access your online exercises on Saturday 1st November between 1am and 5am due to planned maintenance. Please consider this when planning when to take the online exercises.
 
 Sign in to your home page to start the exercises.
 (https://www.apply-civil-service-fast-stream.service.gov.uk/fset-fast-stream/signin)
