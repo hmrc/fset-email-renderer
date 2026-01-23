@@ -5,7 +5,7 @@ Congratulations, you've successfully passed all the required stages.
 We're delighted to be able to offer you a role on the Civil Service Fast Stream, for your chosen scheme/internship:
 @{params.parameters("scheme")}
 
-You will need to sign back into your account to provide some additional information.
+You will need to sign back into your account to provide some additional information(Fast Stream candidates only, Summer Internship Programme candidates do not need to complete this step).
 
 Once you have completed this, the relevant team will contact you in due course with the next steps.
 
